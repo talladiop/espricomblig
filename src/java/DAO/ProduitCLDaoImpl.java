@@ -50,11 +50,7 @@ public class ProduitCLDaoImpl extends AbstractDao implements IProduitCLDao
 	sb.append("UPDATE produit_cl ")
                         .append("SET id_produitcl").append("=").append(pr.getIdProduitcl())
 			.append(", nom_produitcl").append("='").append(pr.getNomProduitcl())
-			//.append("', type_condition").append("='").append(pr.getTypeCondition())
-			//.append("', Unite_mesure").append("='").append(pr.getUnitemesure())
-			//.append("', Prix_unitaire").append("=").append(pr.getPrixunitaire())
-                //.append("', IDdepartement").append("=").append(pr.getDepartement().getIDdepartement())
-                        
+			
 
 			.append("'  WHERE id_produitcl").append("=").append(pr.getIdProduitcl()).append("");
 		try {
@@ -76,12 +72,7 @@ public class ProduitCLDaoImpl extends AbstractDao implements IProduitCLDao
 		sb.append("INSERT INTO produit_cl (nom_produitcl)")
 
                         .append("VALUES('").append(pr.getNomProduitcl()).append("') ");
-			//.append("'").append(pr.getTypeCondition()).append("', ")
-			//.append("'").append(pr.getUnitemesure()).append("', ")
-			//.append("").append(pr.getPrixunitaire()).append(", ")
-                        //.append("").append(pr.getDepartement().getIDdepartement()).append(") ");
 			
-
 		try {
                    // System.out.println(sb);
 			createStatement().executeUpdate(sb.toString());
@@ -144,13 +135,7 @@ public class ProduitCLDaoImpl extends AbstractDao implements IProduitCLDao
 
 
 					pr.setNomProduitcl(rs.getString("nom_produitcl"));
-                                         //pr.setTypeCondition(rs.getString("type_condition"));
-					//pr.setUnitemesure(rs.getString("Unite_mesure"));
-					//pr.setPrixunitaire(Integer.parseInt(rs.getString("Prix_unitaire")));
-					
-                                        // Departement dpart = dpDao.findByPrimaryKey(Integer.parseInt(rs.getString("IDdepartement")));                                 
-					
-					//pr.setDepartement(dpart);
+                                        
                                         
 
 					prList.add(pr);
@@ -184,30 +169,7 @@ public class ProduitCLDaoImpl extends AbstractDao implements IProduitCLDao
 				.append(pr.getNomProduitcl())
 				.append("'");
 			}
-		/*	if(pr.getTypeCondition()!=null && !"".equals(pr.getTypeCondition())){
-				sb.append(" AND type_condition ='")
-				.append(pr.getTypeCondition())
-				.append("'");
-			}
-			if(pr.getUnitemesure()!=null && !"".equals(pr.getUnitemesure())){
-				sb.append(" AND Unite_mesure ='")
-				.append(pr.getUnitemesure())
-				.append("'");
-			}
-			if(pr.getUnitemesure()!=null && !"".equals(pr.getUnitemesure())){
-				sb.append(" AND Prix_unitaire =")
-				.append(pr.getUnitemesure())
-				.append("");
-			}
-                 
-                 
-                        if(pr.getDepartement()!=null && !"".equals(pr.getDepartement())){
-				sb.append(" AND IDdepartement =")
-				.append(pr.getDepartement().getIDdepartement())
-				.append("");
-			}
-			*/
-
+		
                        
 			String requete = sb.toString().replaceFirst("AND", "WHERE");
 			ResultSet rs = createStatement().executeQuery(requete);

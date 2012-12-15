@@ -97,7 +97,7 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
           <li><a href="enquete-cuisson-region-workspace654333vncvfbvfjvfvfvjfvffjkfrgrggh87654nvfjfvjfvjfhjffvfvjffg1.jsp">Visualiser enquete Cuisson</a></li>
 	      <li>
 	        <form name="form1" method="post" action="LogOutAdminRegion">
-	          <input type="submit" name="button" id="button" value="Déconnexion">
+	          <input type="submit" name="button" id="button" value="Déconnexion"/>
             </form>
           </li>
         </ul>
@@ -147,9 +147,9 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
          List<EnqueteCl> eqList = service.enqueteclServiceDao.findByValue(enqgcl);
                for(EnqueteCl dest :eqList)
                     {
-                   if(dest.getDepartement().getRegion().getIDregion() == cptcl.getDepartement().getRegion().getIDregion())
-                  {
-                      
+     if(dest.getDepartement().getRegion().getIDregion() == cptcl.getDepartement().getRegion().getIDregion())
+       {
+                     
 %>
   <tr>
     <td align="left" bgcolor="#F1F1F1"><span class="feature-title"><%=dest.getProduitcl().getNomProduitcl() %></span></td>
@@ -172,7 +172,7 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
   </tr>
   <%
    }
-   
+    
      }
 %>
 </table>

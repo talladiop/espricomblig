@@ -18,6 +18,12 @@ public class EnqueteEquipement implements Serializable {
     private String dateEnquete;
     
     private Departement depart;
+    
+     private String region;
+     
+    private int mois;
+    
+    private int annee;
    
     private Enqueteur enqueteur;
    
@@ -37,6 +43,9 @@ public class EnqueteEquipement implements Serializable {
         this.equipement= null;
         this.dateEnquete = "";
         this.depart=null;
+         this.region = "";
+        this.mois = 0;
+        this.annee = 0;
         this.enqueteur = null;
         this.prixAchat = 0;
         this.prixVente = 0;
@@ -50,11 +59,17 @@ public class EnqueteEquipement implements Serializable {
         this.idenquete = idenquete;
     }
 
-    public EnqueteEquipement(Integer idenquete, Cuisson equipement, String dateEnquete, Departement depart, Enqueteur enqueteur, int prixAchat, int prixVente, int qte, String  valider) {
+    public EnqueteEquipement(Integer idenquete, Cuisson equipement, String dateEnquete, 
+            Departement depart, 
+            String region, int mois, int annee, Enqueteur enqueteur, 
+            int prixAchat, int prixVente, int qte, String  valider) {
         this.idenquete = idenquete;
         this.equipement= equipement;
         this.dateEnquete = dateEnquete;
         this.depart=depart;
+         this.region = region;
+        this.mois = mois;
+        this.annee = annee;
         this.enqueteur = enqueteur;
         this.prixAchat = prixAchat;
         this.prixVente = prixVente;
@@ -62,11 +77,16 @@ public class EnqueteEquipement implements Serializable {
         this.valider= valider;
     }
 
-    public EnqueteEquipement(Cuisson equipement, String dateEnquete, Departement depart, Enqueteur enqueteur, int prixAchat, int prixVente, int qte, String  valider) {
+    public EnqueteEquipement(Cuisson equipement, String dateEnquete, Departement depart, 
+            String region, int mois, int annee, Enqueteur enqueteur, int prixAchat, 
+            int prixVente, int qte, String  valider) {
         
         this.equipement= equipement;
         this.dateEnquete = dateEnquete;
         this.depart= depart;
+        this.region = region;
+        this.mois = mois;
+        this.annee = annee;
         this.enqueteur = enqueteur;
         this.prixAchat = prixAchat;
         this.prixVente = prixVente;
@@ -156,6 +176,31 @@ public class EnqueteEquipement implements Serializable {
         this.validerfinale = validerfinale;
     }
 
+    public int getAnnee() {
+        return annee;
+    }
+
+    public void setAnnee(int annee) {
+        this.annee = annee;
+    }
+
+    public int getMois() {
+        return mois;
+    }
+
+    public void setMois(int mois) {
+        this.mois = mois;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    
     
     
     

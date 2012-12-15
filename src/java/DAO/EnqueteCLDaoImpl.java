@@ -82,15 +82,19 @@ public class EnqueteCLDaoImpl extends AbstractDao implements IEnqueteCLDao
                                         Departement dpart = dpDao.findByPrimaryKey(Integer.parseInt(rs.getString("IDdepartement"))); 
                                         eq.setDepartement(dpart);
                                         
+                                         eq.setRegion(rs.getString("region"));
+                                         
+                                          eq.setMois(Integer.parseInt(rs.getString("mois")));
+                                          
+                                           eq.setAnnee(Integer.parseInt(rs.getString("annee")));
+                                        
                                          
                                           eq.setValider(rs.getString("valider"));
                                           
                                           eq.setValiderfinale(rs.getString("validerfinale"));
                                         
                                        
-                                        
-                                       // eq.setActivation(rs.getString("activation"));
-                                         
+                                                
                                         
 					enqList.add(eq);
 				}
@@ -183,6 +187,21 @@ public class EnqueteCLDaoImpl extends AbstractDao implements IEnqueteCLDao
 				.append(eq.getDepartement().getIDdepartement())
                                  .append("");
 			}
+                                   if(eq.getRegion()!=null && !"".equals(eq.getRegion())){
+				sb.append(" AND region ='")
+				.append(eq.getRegion())
+				.append("'");
+			}
+                           if(eq.getMois()!=0 && !"".equals(eq.getMois())){
+				sb.append(" AND mois =")
+				.append(eq.getMois())
+				.append("");
+			}
+                            if(eq.getAnnee()!=0 && !"".equals(eq.getAnnee())){
+				sb.append(" AND annee =")
+				.append(eq.getAnnee())
+				.append("");
+			}
                              if(eq.getValider()!=null && !"".equals(eq.getValider())){
 				sb.append(" AND valider ='")
 				.append(eq.getValider())
@@ -215,7 +234,8 @@ public class EnqueteCLDaoImpl extends AbstractDao implements IEnqueteCLDao
         sb = new StringBuffer();
 		sb.append("INSERT INTO enquete_cl (Id_produitcl, type_cond, equivalant_kg_min, "
                         + "equivalant_kg_max, prix_gros, "
-                        + "Prix_Detail, date_enquete, marchee, Id_enqueteur, IDdepartement, valider)")
+                        + "Prix_Detail, date_enquete, marchee, Id_enqueteur, IDdepartement, region, "
+                        + "mois, annee,valider)")
 
                         .append("VALUES(").append(eq.getProduitcl().getIdProduitcl()).append(", ")
 			.append("'").append(eq.getTypeCond()).append("', ")
@@ -227,6 +247,9 @@ public class EnqueteCLDaoImpl extends AbstractDao implements IEnqueteCLDao
                         .append("'").append(eq.getMarchee()).append("', ")
                         .append("").append(eq.getEnqueteur().getIdenqueteur()).append(", ")
                         .append("").append(eq.getDepartement().getIDdepartement()).append(", ")
+                         .append("'").append(eq.getRegion()).append("', ")
+                        .append("").append(eq.getMois()).append(", ")
+                        .append("").append(eq.getAnnee()).append(", ")
                         .append("'").append(eq.getValider()).append("') ");
                 
 
@@ -251,15 +274,20 @@ public class EnqueteCLDaoImpl extends AbstractDao implements IEnqueteCLDao
 			.append(", Id_produitcl").append("=").append(eqt.getProduitcl().getIdProduitcl())
                         .append(", type_cond").append("='").append(eqt.getTypeCond())
 			.append("', equivalant_kg_min").append("=").append(eqt.getEquivalantKgmin())
-                        .append("', equivalant_kg_max").append("=").append(eqt.getEquivalantKgmax())
+                        .append(", equivalant_kg_max").append("=").append(eqt.getEquivalantKgmax())
                         .append(", prix_gros").append("=").append(eqt.getPrixGros())
                 .append(", Prix_Detail").append("=").append(eqt.getPrixDetail())
                 .append(", date_enquete").append("='").append(eqt.getDateEnquete())
                 .append("', marchee").append("='").append(eqt.getMarchee())
                 .append("', Id_enqueteur").append("=").append(eqt.getEnqueteur().getIdenqueteur())
                 .append(", IDdepartement").append("=").append(eqt.getDepartement().getIDdepartement())
+                .append(", region").append("='").append(eqt.getRegion())
+                
+                .append("', mois").append("=").append(eqt.getMois())
+                
+                .append(", annee").append("=").append(eqt.getAnnee())
                 .append(", valider").append("='").append(eqt.getValider())
-                .append(", validerfinale").append("='").append(eqt.getValiderfinale())
+                .append("', validerfinale").append("='").append(eqt.getValiderfinale())
                         
                 	.append("'  WHERE Id_enqueteCl").append("=").append(eqt.getIdenqueteCl()).append("");
 		try {

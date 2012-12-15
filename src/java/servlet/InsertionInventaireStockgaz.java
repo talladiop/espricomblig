@@ -97,6 +97,9 @@ public class InsertionInventaireStockgaz extends FactoryService
                                         dateenregistrer,
                                         enq,
                                         dp,
+                                        dp.getRegion().getNomregion(),
+                                         month,
+                                         year,
                                          "0");
 					
 			

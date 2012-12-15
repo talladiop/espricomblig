@@ -44,11 +44,9 @@ public class ModifEnqueteCL extends FactoryService
         {
               //intentiation enquetecl
               EnqueteCl ct = new EnqueteCl();
-              //intentiation objet enqueteur
-              Enqueteur enq = new Enqueteur();
-              
+             
               //recherche de l'enqueteur
-   enq = enqueteurServiceDao.findByPrimaryKey(Integer.parseInt(request.getParameter("idenqueteur")));
+   Enqueteur enq = enqueteurServiceDao.findByPrimaryKey(Integer.parseInt(request.getParameter("idenqueteur")));
                  
             //objet session
             HttpSession session=request.getSession();
@@ -109,6 +107,9 @@ public class ModifEnqueteCL extends FactoryService
                         ct.setMarchee(request.getParameter("marche"));
                         ct.setEnqueteur(enq);
                         ct.setDepartement(dp);
+                        ct.setRegion(request.getParameter("region"));
+                        ct.setMois(Integer.parseInt(request.getParameter("mois")));
+                        ct.setAnnee(Integer.parseInt(request.getParameter("annee")));
                         ct.setValider("0");
                         ct.setValiderfinale("0");
                                          

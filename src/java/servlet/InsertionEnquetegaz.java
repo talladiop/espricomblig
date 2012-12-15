@@ -100,7 +100,10 @@ public class InsertionEnquetegaz extends FactoryService
 					0,
                                         dateenregistrer,
                                         enq,
-                                        dp );
+                                        dp,
+                                        dp.getRegion().getNomregion(),
+                                         month,
+                                         year);
 					
 			
                            if(enquetegazServiceDao.save(ct))

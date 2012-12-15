@@ -116,6 +116,11 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 		    <li><a href="produitCLcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Produit CL</a></li>
 		    <li><a href="cuissoncdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Equipement cuisson</a></li>
 		    <li><a href="enqueteurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Enqueteur</a></li>
+		    <li>
+		      <form name="form1" method="post" action="LogOutAdmin">
+		        <input type="submit" name="button3" id="button3" value="Déconnexion">
+	          </form>
+	        </li>
 	      </ul>
 	  </div>
 		<h2>&nbsp; </h2>
@@ -139,7 +144,7 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 <a href="affacheTousEnquetecdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp?toutvalide=543sdhhhcdschdc"></a>
 <table width="1190" border="0" align="center" cellpadding="0" cellspacing="0" class="tail12">
   <tr bgcolor="#AAAAFF">
-    <td colspan="13" align="center" bgcolor="#CCCCCC"><strong>Liste de toutes les enquêtes de Equipement Cuisson de tout Département du Sénégal</strong></td>
+    <td colspan="13" align="center" bgcolor="#CCCCCC"><strong>Liste de toutes les enquêtes de Equipement Cuisson de tous les Départements du Sénégal</strong></td>
   </tr>
   <tr bgcolor="#AAAAFF">
     <td width="107" bgcolor="#ADADAD"><div align="center"><strong>Produit</strong></div></td>

@@ -73,7 +73,7 @@ public class ModifEnqueteCuisson extends FactoryService
            
            try{
                
-               
+             
                         
 
                  //férification des entrées de sisies
@@ -84,7 +84,7 @@ public class ModifEnqueteCuisson extends FactoryService
                     )
 
 		 {
-                     
+                       
                      //rercherche departement
                      Departement dp = new Departement();
                      dp = departeServiceDao.findByPrimaryKey(enq.getDepartement().getIDdepartement());
@@ -94,7 +94,7 @@ public class ModifEnqueteCuisson extends FactoryService
                      Cuisson prod = new Cuisson();
                      prod = cuissonServiceDao.findByPrimaryKey(Integer.parseInt(request.getParameter("cuisson")));
                     
-                     
+                   
                       //enregistrement du enqueteur
 			ct = new EnqueteEquipement();
                         
@@ -102,6 +102,9 @@ public class ModifEnqueteCuisson extends FactoryService
                         ct.setEquipement(prod);
                         ct.setDateEnquete(dateenregistrer);
                         ct.setDepart(dp);
+                         ct.setRegion(request.getParameter("region"));
+                        ct.setMois(Integer.parseInt(request.getParameter("mois")));
+                        ct.setAnnee(Integer.parseInt(request.getParameter("annee")));
                         ct.setEnqueteur(enq);
                         ct.setPrixAchat(Integer.parseInt(request.getParameter("pa")));
                         ct.setPrixVente(Integer.parseInt(request.getParameter("pv")));
@@ -109,11 +112,11 @@ public class ModifEnqueteCuisson extends FactoryService
                         ct.setValider("0");
                         ct.setValiderfinale("0");
                                         
-					
+				 	
 			
                            if(enqueteequipementSrv.modifier(ct))
                                      {
-                                                                                  
+                                                                                   
                                        
 				    response.sendRedirect("modif-cuissoncdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp?admoneth23984outputofficeceadmin=184469578&dest65432id5432="+Integer.parseInt(request.getParameter("idenquetecuisson"))+"&clt345id65deter34=65&65sl-23&dggbbf=56-43hcggcvv");
                                     }

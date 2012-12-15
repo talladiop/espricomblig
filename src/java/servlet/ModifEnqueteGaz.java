@@ -99,12 +99,14 @@ public class ModifEnqueteGaz extends FactoryService
                          ct.setProduitgaz(pr);
                         ct.setPrixCuGros(Integer.parseInt(request.getParameter("pcg")));
                         ct.setPrixCuDetail(Integer.parseInt(request.getParameter("pcd")));
-			//ct.setPrixPeriGros(Integer.parseInt(request.getParameter("ppg")));
-                       //ct.setPrixPeriDetail(Integer.parseInt(request.getParameter("ppd")));
 		        ct.setDateEnquete(dateenregistrer);
                         ct.setEnqueteur(enq);
                         ct.setDepartement(dp);
+                        ct.setRegion(request.getParameter("region"));
+                        ct.setMois(Integer.parseInt(request.getParameter("mois")));
+                        ct.setAnnee(Integer.parseInt(request.getParameter("annee")));
                         ct.setValider("0");
+                        ct.setValiderfinale("0");
                                          
 					
 			

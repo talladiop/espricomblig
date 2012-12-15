@@ -9,6 +9,7 @@ package Factory;
 import DAO.AutorisationTonnageDaoImpl;
 import DAO.CuissonDaoImpl;
 import DAO.DeparteDaoImpl;
+import DAO.DifferencePrix;
 import DAO.Eauetforet;
 import DAO.EnqueteCLDaoImpl;
 import DAO.EnqueteEauxForetImpl;
@@ -44,5 +45,6 @@ public class FactoryD
               protected EnqueteCLDaoImpl enqueteclDao= EnqueteCLDaoImpl.getInstance();
               protected ValiderEmail valideremailDao= ValiderEmail.getInstance();
                protected EnqueteEquipementImpl enqueteequipementDao= EnqueteEquipementImpl.getInstance();
+               protected DifferencePrix differenceprixDao= DifferencePrix.getInstance();
     
 }

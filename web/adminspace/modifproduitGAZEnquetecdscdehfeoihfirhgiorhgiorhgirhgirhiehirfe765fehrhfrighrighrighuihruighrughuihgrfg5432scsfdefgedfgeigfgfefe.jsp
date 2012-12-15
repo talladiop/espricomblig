@@ -146,7 +146,10 @@ class="form-inline well" name="form1" method="post" action="ModifEnqueteGaz">
     <tr>
       <td colspan="2" align="center" bgcolor="#D0D0D0"><input type="submit" name="button" id="button" value="Modifier" />
       <input name="idenqueu" type="hidden" id="idenqueu" value="<%=cptcl.getIdenqueteur()  %>" />
-      <input name="dest65432id5432" type="hidden" id="dest65432id5432" value="<%=ef.getIdEnqueteGaz() %>"></td>
+      <input name="dest65432id5432" type="hidden" id="dest65432id5432" value="<%=ef.getIdEnqueteGaz() %>">
+      <input name="region" type="hidden" id="region" value="<%=ef.getRegion() %>">
+      <input name="mois" type="hidden" id="mois" value="<%=ef.getMois() %>">
+      <input name="annee" type="hidden" id="annee" value="<%=ef.getAnnee() %>"></td>
     </tr>
     <tr>
       <td colspan="2" bgcolor="#D0D0D0">Les champs en <span class="red">*</span> ne doivent pas être vide</td>

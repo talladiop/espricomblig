@@ -114,20 +114,17 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 <p><a href="enquete-gaz-region-workspace654333vncvfbvfjvfvfvjfvffjkfrgrggh87654nvfjfvjfvjfhjffvfvjffg1.jsp?ffdf=65&toutvalide=654re&stgx=65"><img src="images/campinegaz.JPG" width="20" height="20">Cliquer pour valider toutes les enquêtes</a></p>
 <table width="1120" border="0" align="center" cellpadding="0" cellspacing="0" class="tail12">
   <tr bgcolor="#AAAAFF">
-    <td colspan="17" align="center" bgcolor="#CCCCCC"><strong>Liste de toutes les enquêtes de Gaz  de la Région de <%=cptcl.getDepartement().getRegion().getNomregion()  %></strong></td>
+    <td colspan="14" align="center" bgcolor="#CCCCCC"><strong>Liste de toutes les enquêtes de Gaz  de la Région de <%=cptcl.getDepartement().getRegion().getNomregion()  %></strong></td>
   </tr>
   <tr bgcolor="#AAAAFF">
     <td width="112" bgcolor="#ADADAD"><div align="center"><strong>Produit</strong></div></td>
     <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="109" bgcolor="#ADADAD"><strong>Prix Gros/Centre urbain</strong></td>
+    <td width="109" bgcolor="#ADADAD"><strong>Prix Gros</strong></td>
     <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="140" bgcolor="#ADADAD"><strong>Prix Détail /Centre urbain</strong></td>
+    <td width="132" bgcolor="#ADADAD"><strong>Prix Détail </strong></td>
     <td width="3" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="120" bgcolor="#ADADAD"><strong>Prix Gros/Périférique</strong></td>
-    <td width="3" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="154" bgcolor="#ADADAD"><div align="center"><strong><span class="feature-title">Prix Détail/Périférique</span></strong></div></td>
     <td width="3" align="center" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="127" align="center" bgcolor="#ADADAD"><strong><span class="feature-title">Date d'enregistrée</span></strong></td>
+    <td width="113" align="center" bgcolor="#ADADAD"><strong><span class="feature-title">Date d'enregistrée</span></strong></td>
     <td width="3" align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td width="117" align="center" bgcolor="#ADADAD"><strong><span class="feature-title">Département</span></strong></td>
     <td width="3" align="center" bgcolor="#FFFFFF">&nbsp;</td>
@@ -157,9 +154,6 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
     <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="center" bgcolor="#F1F1F1"><%=dest.getPrixCuDetail() %></td>
     <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
-    <td align="center" bgcolor="#F1F1F1"><%=dest.getPrixPeriGros() %></td>
-    <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
-    <td align="center" bgcolor="#F1F1F1"><%=dest.getPrixPeriDetail() %></td>
     <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="center" bgcolor="#F1F1F1"><%=dest.getDateEnquete() %></td>
     <td align="center" bgcolor="#FFFFFF">&nbsp;</td>

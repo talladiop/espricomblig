@@ -24,6 +24,11 @@ public class InventairestGaz implements Serializable
     private Enqueteur enqueteur;
    
     private Departement departement;
+     private String region;
+     
+    private int mois;
+    
+    private int annee;
     
     private String valider;
     
@@ -41,6 +46,9 @@ public class InventairestGaz implements Serializable
         this.dateEnr = "";
         this.enqueteur = null;
         this.departement = null;
+        this.region = "";
+        this.mois = 0;
+        this.annee = 0;
         this.valider = "";
         
         this.validerfinale = "";
@@ -51,19 +59,24 @@ public class InventairestGaz implements Serializable
     }
 
     public InventairestGaz(Integer idEnventairegaz, ProduitGaz produitgaz, int qt, String dateEnr, 
-            Enqueteur enqueteur, Departement departement, String valider) {
+            Enqueteur enqueteur, Departement departement, 
+            String region, int mois, int annee, String valider) {
         this.idEnventairegaz = idEnventairegaz;
         this.produitgaz = produitgaz;
         this.qt = qt;
         this.dateEnr = dateEnr;
         this.enqueteur = enqueteur;
         this.departement = departement;
+         this.region = region;
+        this.mois = mois;
+        this.annee = annee;
         this.valider = valider;
     }
     
     
      public InventairestGaz(ProduitGaz produitgaz, int qt, String dateEnr, 
-             Enqueteur enqueteur, Departement departement, String valider) 
+             Enqueteur enqueteur, Departement departement, String region, int mois, 
+             int annee, String valider) 
      {
        
         this.produitgaz = produitgaz;
@@ -71,6 +84,9 @@ public class InventairestGaz implements Serializable
         this.dateEnr = dateEnr;
         this.enqueteur = enqueteur;
         this.departement = departement;
+         this.region = region;
+        this.mois = mois;
+        this.annee = annee;
         this.valider = valider;
     }
     
@@ -140,6 +156,30 @@ public class InventairestGaz implements Serializable
 
     public void setValiderfinale(String validerfinale) {
         this.validerfinale = validerfinale;
+    }
+
+    public int getAnnee() {
+        return annee;
+    }
+
+    public void setAnnee(int annee) {
+        this.annee = annee;
+    }
+
+    public int getMois() {
+        return mois;
+    }
+
+    public void setMois(int mois) {
+        this.mois = mois;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
     }
 
    

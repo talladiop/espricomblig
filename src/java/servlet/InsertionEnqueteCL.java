@@ -111,7 +111,7 @@ public class InsertionEnqueteCL extends FactoryService
                      //rercherche departement
                     Enqueteur enq = enqueteurServiceDao.findByPrimaryKey(Integer.parseInt(request.getParameter("idenqueteur")));
                     
-                      
+                     
                       //enregistrement du enquetecl
 			ct = new EnqueteCl(0,
                                         prcl,
@@ -124,6 +124,9 @@ public class InsertionEnqueteCL extends FactoryService
                                         marche,
                                        enq,
                                        enq.getDepartement(),
+                                       enq.getDepartement().getRegion().getNomregion(),
+                                         month,
+                                         year,
                                         "0"
 					 );
   

@@ -148,7 +148,10 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
       <td colspan="2" align="center" bgcolor="#D0D0D0"><input type="submit" name="button" id="button" value="Modifier" />
         <input name="idenqueu" type="hidden" id="idenqueu" value="<%=cptcl.getIdenqueteur()  %>" />
       <input name="iddepartement" type="hidden" id="iddepartement" value="<%=cptcl.getDepartement().getIDdepartement() %>" />
-      <input name="idenquetecuisson" type="hidden" id="idenquetecuisson" value="<%=ef.getIdenquete() %>"></td>
+      <input name="idenquetecuisson" type="hidden" id="idenquetecuisson" value="<%=ef.getIdenquete() %>">
+      <input name="region" type="hidden" id="region" value="<%=ef.getRegion() %>">
+      <input name="mois" type="hidden" id="mois" value="<%=ef.getMois() %>">
+      <input name="annee" type="hidden" id="annee" value="<%=ef.getAnnee() %>"></td>
     </tr>
     <tr>
       <td colspan="2" bgcolor="#D0D0D0">Les champs en <span class="red">*</span> ne doivent pas être vide</td>

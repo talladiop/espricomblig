@@ -165,7 +165,10 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
     </tr>
     <tr>
       <td colspan="5" align="center" bgcolor="#D0D0D0"><input name="idenqueteur" type="hidden" id="idenqueteur" value="<%=cptcl.getIdenqueteur() %>">
-      <input name="idenquete" type="hidden" id="idenquete" value="<%=ef.getIdenqueteCl() %>"></td>
+      <input name="idenquete" type="hidden" id="idenquete" value="<%=ef.getIdenqueteCl() %>">
+      <input name="region" type="hidden" id="region" value="<%=ef.getRegion() %>">
+      <input name="mois" type="hidden" id="mois" value="<%=ef.getMois() %>">
+      <input name="annee" type="hidden" id="annee" value="<%=ef.getAnnee() %>"></td>
     </tr>
     <tr>
       <td colspan="5" align="center" bgcolor="#D0D0D0"><input type="submit" name="button" id="button" value="Modifier" /></td>
@@ -178,19 +181,26 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
     </tr>
   </table>
 </form>
-<table width="1170" border="0" align="center" cellpadding="0" cellspacing="0">
+<table width="900" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr bgcolor="#AAAAFF">
-    <td colspan="8" align="center" bgcolor="#EAEAEA">Liste de vos enquétes</td>
+    <td colspan="15" align="center" bgcolor="#EAEAEA">Liste de vos enquétes</td>
   </tr>
   <tr bgcolor="#D0D0D0">
-    <td width="111"><div align="center"><strong><span class="feature-title">Nom produit</span></strong></div></td>
-    <td width="187"><div align="center"><strong><span class="feature-title">Type conditionnement</span></strong></div></td>
-    <td width="158"><div align="center"><strong><span class="feature-title">Equivalant en Kg min</span></strong></div></td>
-    <td width="156"><strong><span class="feature-title">Equivalant en Kg max</span></strong></td>
-    <td width="89"><div align="center"><strong>Prix en Gros</strong></div></td>
+    <td width="92"><div align="center"><strong><span class="feature-title">Nom produit</span></strong></div></td>
+    <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
+    <td width="130"><div align="center"><strong><span class="feature-title">Type conditionnement</span></strong></div></td>
+    <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
+    <td width="102"><div align="center"><strong><span class="feature-title">Equivalant en Kg min</span></strong></div></td>
+    <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
+    <td width="106"><strong><span class="feature-title">Equivalant en Kg max</span></strong></td>
+    <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
+    <td width="95"><div align="center"><strong>Prix en Gros</strong></div></td>
+    <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
     <td width="96"><strong>Prix en détail</strong></td>
-    <td width="284"><strong>Marché où l'enquete est faite</strong></td>
-    <td width="89"><span class="feature-title"><strong>modifier</strong></span></td>
+    <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
+    <td width="181"><strong>Marché où l'enquete est faite</strong></td>
+    <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
+    <td width="70"><span class="feature-title"><strong>modifier</strong></span></td>
   </tr>
   <%
             EnqueteCl eq = new EnqueteCl();
@@ -205,12 +215,19 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 %>
   <tr>
     <td align="left" bgcolor="#F1F1F1"><span class="feature-title"><%=dest.getProduitcl().getNomProduitcl() %></span></td>
+    <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="center" bgcolor="#F1F1F1"><span class="feature-title"><%=dest.getTypeCond() %></span></td>
+    <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="center" bgcolor="#F1F1F1"><strong><span class="feature-title"><%=dest.getEquivalantKgmin() %></span></strong></td>
+    <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="center" bgcolor="#F1F1F1"><strong><span class="feature-title"><%=dest.getEquivalantKgmax() %></span></strong></td>
+    <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="center" bgcolor="#F1F1F1"><strong><span class="bleu"><%=dest.getPrixGros() %></span></strong></td>
+    <td align="left" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="left" bgcolor="#F1F1F1"><strong><span class="bleu"><%=dest.getPrixDetail() %></span></strong></td>
+    <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="center" bgcolor="#F1F1F1">&nbsp;</td>
+    <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="center"><strong><span class="feature-title"><a href="modifenqueteCLcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp?dest65432id5432=<%=dest.getIdenqueteCl() %>">modifier</a></span></strong></td>
   </tr>
   <%

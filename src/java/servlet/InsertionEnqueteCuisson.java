@@ -100,6 +100,9 @@ public class InsertionEnqueteCuisson extends FactoryService {
                      
                       //enregistrement du enqueteur
 			ct = new EnqueteEquipement(0, prod, dateenregistrer, dp,
+                                        dp.getRegion().getNomregion(),
+                                         month,
+                                         year,
                                         enq, Integer.parseInt(request.getParameter("pda")),
                                         Integer.parseInt(request.getParameter("pdv")),
 					Integer.parseInt(request.getParameter("qte")),

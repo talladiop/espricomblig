@@ -116,6 +116,11 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 		    <li><a href="produitCLcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Produit CL</a></li>
 		    <li><a href="cuissoncdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Equipement cuisson</a></li>
 		    <li><a href="enqueteurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Enqueteur</a></li>
+		    <li>
+		      <form name="form1" method="post" action="LogOutAdmin">
+		        <input type="submit" name="button3" id="button3" value="Déconnexion">
+	          </form>
+	        </li>
 	      </ul>
 	  </div>
 		<h2>&nbsp; </h2>
@@ -140,18 +145,15 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 <a href="affacheTousEnquetecdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp?toutvalide=543sdhhhcdschdc"></a>
 <table width="1120" border="0" align="center" cellpadding="0" cellspacing="0" class="tail12">
   <tr bgcolor="#AAAAFF">
-    <td colspan="17" align="center" bgcolor="#CCCCCC"><strong>Liste de toutes les enquêtes de Gaz  de tout Département du Sénégal</strong></td>
+    <td colspan="14" align="center" bgcolor="#CCCCCC"><strong>Liste de toutes les enquêtes de Gaz  de tous les Départements du Sénégal</strong></td>
   </tr>
   <tr bgcolor="#AAAAFF">
     <td width="112" bgcolor="#ADADAD"><div align="center"><strong>Produit</strong></div></td>
     <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="109" bgcolor="#ADADAD"><strong>Prix Gros/Centre urbain</strong></td>
+    <td width="109" bgcolor="#ADADAD"><strong>Prix Gros</strong></td>
     <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="140" bgcolor="#ADADAD"><strong>Prix Détail /Centre urbain</strong></td>
+    <td width="140" bgcolor="#ADADAD"><strong>Prix Détail </strong></td>
     <td width="3" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="120" bgcolor="#ADADAD"><strong>Prix Gros/Périférique</strong></td>
-    <td width="3" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="154" bgcolor="#ADADAD"><div align="center"><strong><span class="feature-title">Prix Détail/Périférique</span></strong></div></td>
     <td width="3" align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td width="127" align="center" bgcolor="#ADADAD"><strong><span class="feature-title">Date d'enregistrée</span></strong></td>
     <td width="3" align="center" bgcolor="#FFFFFF">&nbsp;</td>
@@ -181,9 +183,6 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
     <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="center" bgcolor="#F1F1F1"><%=dest.getPrixCuDetail() %></td>
     <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
-    <td align="center" bgcolor="#F1F1F1"><%=dest.getPrixPeriGros() %></td>
-    <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
-    <td align="center" bgcolor="#F1F1F1"><%=dest.getPrixPeriDetail() %></td>
     <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="center" bgcolor="#F1F1F1"><%=dest.getDateEnquete() %></td>
     <td align="center" bgcolor="#FFFFFF">&nbsp;</td>

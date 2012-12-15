@@ -112,6 +112,10 @@
         <servlet-name>ModifEnqueteCuisson</servlet-name>
         <servlet-class>servlet.ModifEnqueteCuisson</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LogOutAdmin</servlet-name>
+        <servlet-class>servlet.LogOutAdmin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>InsertionLocalite</servlet-name>
         <url-pattern>/adminspace/InsertionLocalite</url-pattern>
@@ -223,6 +227,10 @@
     <servlet-mapping>
         <servlet-name>ModifEnqueteCuisson</servlet-name>
         <url-pattern>/adminspace/ModifEnqueteCuisson</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogOutAdmin</servlet-name>
+        <url-pattern>/supadmin/LogOutAdmin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

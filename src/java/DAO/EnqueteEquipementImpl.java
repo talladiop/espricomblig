@@ -53,6 +53,12 @@ public class EnqueteEquipementImpl extends AbstractDao implements IEnqueteEquipe
                                         
                                          Departement dep =departDao.findByPrimaryKey(Integer.parseInt(rs.getString("IDepartement")));
                                         enqueteequipement.setDepart(dep);
+                                       
+                                         enqueteequipement.setRegion(rs.getString("region"));
+                                         
+                                          enqueteequipement.setMois(Integer.parseInt(rs.getString("mois")));
+                                          
+                                           enqueteequipement.setAnnee(Integer.parseInt(rs.getString("annee")));
                                         
                                         Enqueteur enq= enqqDao.findByPrimaryKey(Integer.parseInt(rs.getString("Id_enqueteur")));
 					enqueteequipement.setEnqueteur(enq);
@@ -83,27 +89,37 @@ public class EnqueteEquipementImpl extends AbstractDao implements IEnqueteEquipe
        // throw new UnsupportedOperationException("Not supported yet.");
     sb = new StringBuffer();
     sb.append("UPDATE enquete_equipement ") 
-			.append("SET Id_enquete=").append(enqueteEquipement.getIdenquete())
-			.append(", Id_Cuisson=").append(enqueteEquipement.getEquipement().getIdCuisson())
-                        .append(", date_enquete='").append(enqueteEquipement.getDateEnquete())
-                        .append("', IDepartement=").append(enqueteEquipement.getDepart().getIDdepartement())
-                        .append(", Id_enqueteur=").append(enqueteEquipement.getEnqueteur().getIdenqueteur())
-                        .append(", prix_achat=").append(enqueteEquipement.getPrixAchat())
-                        .append(", prix_vente=").append(enqueteEquipement.getPrixVente())
-                        .append(", qte=").append(enqueteEquipement.getQte())
-                        .append(", valider='").append(enqueteEquipement.getValider())
-                        .append("', validerfinale='").append(enqueteEquipement.getValiderfinale())
+			.append("SET Id_enquete").append("=").append(enqueteEquipement.getIdenquete())
+			.append(", Id_Cuisson").append("=").append(enqueteEquipement.getEquipement().getIdCuisson())
+                        .append(", date_enquete").append("='").append(enqueteEquipement.getDateEnquete())
+                        .append("', IDepartement").append("=").append(enqueteEquipement.getDepart().getIDdepartement())
+                         
+                        .append(", region").append("='").append(enqueteEquipement.getRegion())
+                
+                        .append("', mois").append("=").append(enqueteEquipement.getMois())
+                
+                        .append(", annee").append("=").append(enqueteEquipement.getAnnee())
+                        .append(", Id_enqueteur").append("=").append(enqueteEquipement.getEnqueteur().getIdenqueteur())
+                        .append(", prix_achat").append("=").append(enqueteEquipement.getPrixAchat())
+                        .append(", prix_vente").append("=").append(enqueteEquipement.getPrixVente())
+                        .append(", qte").append("=").append(enqueteEquipement.getQte())
+                        .append(", valider").append("='").append(enqueteEquipement.getValider())
+                        .append("', validerfinale").append("='").append(enqueteEquipement.getValiderfinale())
             
             
-                       .append("' WHERE Id_enquete=").append(enqueteEquipement.getIdenquete()).append("");
+                       .append("' WHERE Id_enquete").append("=").append(enqueteEquipement.getIdenquete()).append("");
 		try {
+                    
 			createStatement().executeUpdate(sb.toString());
+                        
 			close(conx);
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
+                       
 		}
 		return false;
+                 
     }
 
     
@@ -114,10 +130,13 @@ public class EnqueteEquipementImpl extends AbstractDao implements IEnqueteEquipe
     {
         sb = new StringBuffer();
 		sb.append("INSERT INTO enquete_equipement (Id_Cuisson, date_enquete, "
-                           + "IDepartement, Id_enqueteur, prix_achat, prix_vente, "
+                           + "IDepartement, region, mois, annee, Id_enqueteur, prix_achat, prix_vente, "
                            + "qte, valider) VALUES(").append(enqueteequipement.getEquipement().getIdCuisson()).append(", ")
                         .append("'").append(enqueteequipement.getDateEnquete()).append("', ")
 			.append("").append(enqueteequipement.getDepart().getIDdepartement()).append(", ")
+                        .append("'").append(enqueteequipement.getRegion()).append("', ")
+                        .append("").append(enqueteequipement.getMois()).append(", ")
+                        .append("").append(enqueteequipement.getAnnee()).append(", ")
                         .append("").append(enqueteequipement.getEnqueteur().getIdenqueteur()).append(", ")
                         .append("").append(enqueteequipement.getPrixAchat()).append(", ")
                         .append("").append(enqueteequipement.getPrixVente()).append(", ")
@@ -198,7 +217,24 @@ public class EnqueteEquipementImpl extends AbstractDao implements IEnqueteEquipe
 				sb.append(" AND IDepartement=")
 				.append(enqueteequipement.getDepart().getIDdepartement())
                                         .append("");
-                                       			}
+                                  }
+                                
+                                          if(enqueteequipement.getRegion()!=null && !"".equals(enqueteequipement.getRegion())){
+				sb.append(" AND region ='")
+				.append(enqueteequipement.getRegion())
+				.append("'");
+			}
+                           if(enqueteequipement.getMois()!=0 && !"".equals(enqueteequipement.getMois())){
+				sb.append(" AND mois =")
+				.append(enqueteequipement.getMois())
+				.append("");
+			}
+                            if(enqueteequipement.getAnnee()!=0 && !"".equals(enqueteequipement.getAnnee())){
+				sb.append(" AND annee =")
+				.append(enqueteequipement.getAnnee())
+				.append("");
+			}
+                                
                                 if(enqueteequipement.getEnqueteur() != null){
 				sb.append(" AND Id_enqueteur=")
 				.append(enqueteequipement.getEnqueteur().getIdenqueteur())

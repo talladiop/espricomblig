@@ -62,6 +62,12 @@ public class EnqueteGazDaoImpl extends AbstractDao implements IEnqueteGazDao
                 
                 
                 .append(", IDdepartement").append("=").append(pr.getDepartement().getIDdepartement())
+                
+                .append(", region").append("='").append(pr.getRegion())
+                
+                .append("', mois").append("=").append(pr.getMois())
+                
+                .append(", annee").append("=").append(pr.getAnnee())
                         
                 .append(", valider").append("='").append(pr.getValider())
                 
@@ -85,7 +91,7 @@ public class EnqueteGazDaoImpl extends AbstractDao implements IEnqueteGazDao
     {
         sb = new StringBuffer();
 		sb.append("INSERT INTO enquete_gaz (id_produitgaz, prix_cu_gros, prix_cu_detail, prix_peri_gros, "
-                        + "prix_peri_detail, date_enquete, id_enqueteur, IDdepartement)")
+                        + "prix_peri_detail, date_enquete, id_enqueteur, IDdepartement, region, mois, annee)")
 
                         .append("VALUES(").append(pr.getProduitgaz().getIdProduitgaz()).append(", ")
 			.append("").append(pr.getPrixCuGros()).append(", ")
@@ -94,7 +100,10 @@ public class EnqueteGazDaoImpl extends AbstractDao implements IEnqueteGazDao
                         .append("").append(pr.getPrixPeriDetail()).append(", ")
                         .append("'").append(pr.getDateEnquete()).append("', ")
                 .append("").append(pr.getEnqueteur().getIdenqueteur()).append(", ")
-                 .append("").append(pr.getDepartement().getIDdepartement()).append(") ");
+                 .append("").append(pr.getDepartement().getIDdepartement()).append(", ")
+                .append("'").append(pr.getRegion()).append("', ")
+                .append("").append(pr.getMois()).append(", ")
+                .append("").append(pr.getAnnee()).append(") ");
 			
 
 		try {
@@ -180,6 +189,12 @@ public class EnqueteGazDaoImpl extends AbstractDao implements IEnqueteGazDao
                                         
                                         pr.setDepartement(dpart);
                                         
+                                         pr.setRegion(rs.getString("region"));
+                                         
+                                          pr.setMois(Integer.parseInt(rs.getString("mois")));
+                                          
+                                           pr.setAnnee(Integer.parseInt(rs.getString("annee")));
+                                        
                                         pr.setValider(rs.getString("valider"));
                                         
                                         pr.setValiderfinale(rs.getString("validerfinale"));
@@ -249,6 +264,21 @@ public class EnqueteGazDaoImpl extends AbstractDao implements IEnqueteGazDao
                          if(pr.getDepartement()!=null && !"".equals(pr.getDepartement())){
 				sb.append(" AND IDdepartement =")
 				.append(pr.getDepartement().getIDdepartement())
+				.append("");
+			}
+                          if(pr.getRegion()!=null && !"".equals(pr.getRegion())){
+				sb.append(" AND region ='")
+				.append(pr.getRegion())
+				.append("'");
+			}
+                           if(pr.getMois()!=0 && !"".equals(pr.getMois())){
+				sb.append(" AND mois =")
+				.append(pr.getMois())
+				.append("");
+			}
+                            if(pr.getAnnee()!=0 && !"".equals(pr.getAnnee())){
+				sb.append(" AND annee =")
+				.append(pr.getAnnee())
 				.append("");
 			}
                          if(pr.getValider()!=null && !"".equals(pr.getValider())){

@@ -1,3 +1,4 @@
+<%@page import="entites.Region"%>
 <%@page import="entites.Enqueteur"%>
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
 
@@ -58,6 +59,11 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 	      <li><a href="produitCLcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Produit CL</a></li>
 	      <li><a href="cuissoncdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Equipement cuisson</a></li>
 	      <li><a href="enqueteurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Enqueteur</a></li>
+	      <li>
+	        <form name="form1" method="post" action="LogOutAdmin">
+	          <input type="submit" name="button3" id="button3" value="Déconnexion">
+            </form>
+	      </li>
         </ul>
       </div>
 	</div>
@@ -91,7 +97,7 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td bgcolor="#66CC66">&nbsp;</td>
+    <td bgcolor="#66CC66">Ecarte prix Gaz Suivant les Mois</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td bgcolor="#66CC66">&nbsp;</td>
@@ -100,23 +106,61 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
     <td width="10" bgcolor="#66CC66">&nbsp;</td>
     <td width="228"><a href="affacheTousEnquetecdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Enquête Gaz</a></td>
     <td width="4" bgcolor="#66CC66">&nbsp;</td>
-    <td width="255"><p>Par Mois
-      <select name="select" id="select">
-      </select>
-    </p>
+    <td width="255"><p><a href="graphe/ecart-prixdetail-prixgros-region-prix-gaz-enquetegazcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp?mois=11&fgggf=54">Mois Nonembre</a></p>
+      <p>Par Mois
+        <select name="mois" id="mois">
+          <option value="1">Janvier</option>
+          <option value="2">Fevrier</option>
+          <option value="3">Mars</option>
+          <option value="4">Avril</option>
+          <option value="5">Mai</option>
+          <option value="6">Juin</option>
+          <option value="7">Juillet</option>
+          <option value="8">Aout</option>
+          <option value="9">Septembre</option>
+          <option value="10">Octobre</option>
+          <option value="11">Novembre</option>
+          <option value="12">Decembre</option>
+        </select>
+      </p>
       <p>Région
 
-        <select name="select3" id="select3">
-        </select>      
-        <input type="submit" name="button" id="button" value="Visualiser">
+        <select  required="true" name="region" id="region">
+          <%
+			 Region rg = new Region();
+                      
+   			List<Region> gpList = service.regionServiceDao.findAll();
+                       for(Region drp :gpList){
+	                   %>
+          <option value="<%=drp.getIDregion() %>"><%=drp.getNomregion() %></option>
+          <%
+				     }
+			
+		              %>
+        </select>
+<input type="submit" name="button" id="button" value="Visualiser">
     </p></td>
     <td width="4" bgcolor="#66CC66">&nbsp;</td>
-    <td width="232"><p>Toutes Région</p>
+    <td width="238"><form name="form2" method="post" action="graphe/ecart-prixdetail-prixgros-region-prix-gaz-enquetegazcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">
+      <p>Toutes Région</p>
       <p>Mois
-  <select name="select2" id="select2">
-  </select>
+        <select name="mois" id="mois">
+          <option value="1">Janvier</option>
+          <option value="2">Fevrier</option>
+          <option value="3">Mars</option>
+          <option value="4">Avril</option>
+          <option value="5">Mai</option>
+          <option value="6">Juin</option>
+          <option value="7">Juillet</option>
+          <option value="8">Aout</option>
+          <option value="9">Septembre</option>
+          <option value="10">Octobre</option>
+          <option value="11">Novembre</option>
+          <option value="12">Decembre</option>
+        </select>
         <input type="submit" name="button2" id="button2" value="Visualiser">
-    </p></td>
+      </p>
+    </form>      <p>&nbsp;</p></td>
     <td width="10" bgcolor="#66CC66">&nbsp;</td>
     <td width="409">&nbsp;</td>
     <td width="15" bgcolor="#66CC66">&nbsp;</td>
@@ -127,7 +171,7 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
     <td bgcolor="#66CC66">&nbsp;</td>
     <td bgcolor="#66CC66">&nbsp;</td>
     <td bgcolor="#66CC66">&nbsp;</td>
-    <td bgcolor="#66CC66">&nbsp;</td>
+    <td bgcolor="#66CC66">Ecarte prix Gaz Suivant Deux dates</td>
     <td bgcolor="#66CC66">&nbsp;</td>
     <td>&nbsp;</td>
     <td bgcolor="#66CC66">&nbsp;</td>
@@ -138,7 +182,55 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
     <td bgcolor="#66CC66">&nbsp;</td>
     <td>&nbsp;</td>
     <td bgcolor="#66CC66">&nbsp;</td>
-    <td>&nbsp;</td>
+    <td><form name="form2" method="post" action="graphe/deux-date-ecart-prixdetail-prixgros-region-prix-gaz-enquetegazcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">
+      <p>Toutes Région</p>
+      <p>
+        <% 
+	if(request.getParameter("admoneth23987hiceadmin")!=null ){
+	String code=request.getParameter("admoneth23987hiceadmin");
+	  	 if(code.equalsIgnoreCase("076430343")){
+			
+			  out.print("<font color='red'> Echec Vérifier bien les date à entrer !</font><br>");
+			 
+		 }else{
+		 
+		 out.print("<font color='green'> Affichage r&eacute;ussi ! </font><br>");
+		 }
+	}
+	%>
+        <select name="mois1" id="mois1">
+          <option value="1">Janvier</option>
+          <option value="2">Fevrier</option>
+          <option value="3">Mars</option>
+          <option value="4">Avril</option>
+          <option value="5">Mai</option>
+          <option value="6">Juin</option>
+          <option value="7">Juillet</option>
+          <option value="8">Aout</option>
+          <option value="9">Septembre</option>
+          <option value="10">Octobre</option>
+          <option value="11">Novembre</option>
+          <option value="12">Decembre</option>
+        </select>
+      </p>
+      <p>
+        <select name="mois2" id="mois2">
+          <option value="1">Janvier</option>
+          <option value="2">Fevrier</option>
+          <option value="3">Mars</option>
+          <option value="4">Avril</option>
+          <option value="5">Mai</option>
+          <option value="6">Juin</option>
+          <option value="7">Juillet</option>
+          <option value="8">Aout</option>
+          <option value="9">Septembre</option>
+          <option value="10">Octobre</option>
+          <option value="11">Novembre</option>
+          <option value="12">Decembre</option>
+        </select>
+        <input type="submit" name="button4" id="button4" value="Visualiser">
+      </p>
+    </form></td>
     <td bgcolor="#66CC66">&nbsp;</td>
     <td>&nbsp;</td>
     <td bgcolor="#66CC66">&nbsp;</td>
@@ -212,6 +304,6 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 </body>
 </html>
  <% }else{
-response.sendRedirect("index.jsp?edygeuguyegygfefd=655&dfdefgff=65shxhjcvhvdc&dfdfedjfbjfbgrjkgfrjhgbrjgbrgjhh=76543bjbjkvbjf");
+response.sendRedirect("administrateur.jsp?edygeuguyegygfefd=655&dfdefgff=65shxhjcvhvdc&dfdfedjfbjfbgrjkgfrjhgbrjgbrgjhh=76543bjbjkvbjf");
  }
 %>

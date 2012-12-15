@@ -111,7 +111,7 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
   <tbody>
   
   
-  <tr>
+  
       <%
             
             
@@ -122,16 +122,13 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
                    if(dest.getProduitgaz().getNomProduitgaz().equals("GAZ 2.7 kg"))
 	{
 %>
-
+<tr>
      <th scope="row"><%=dest.getDepartement().getRegion().getNomregion() %></th>
      
      
      
-    <td scope="col"><% n = dest.getPrixCuDetail() - dest.getPrixCuGros(); out.println(n); %></td>
-    </tr>
-    
-    
-  <%
+    <td><% n = dest.getPrixCuDetail() - dest.getPrixCuGros(); out.println(n); %></td>
+      <%
    }
                    
    
@@ -139,7 +136,12 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
    }   
            
 %>
-<tr>
+    </tr>
+    
+    
+
+
+
 
 <%
             
@@ -152,11 +154,11 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 	{
 %>
 
-    
+ <tr>   
   
      
     <td scope="col"><% n = dest1.getPrixCuDetail() - dest1.getPrixCuGros(); out.println(n); %></td>
-    </tr>
+  
     
   <%
    }
@@ -166,9 +168,10 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
    }   
            
 %>
-
+  </tr>
 </tbody>
 </table>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

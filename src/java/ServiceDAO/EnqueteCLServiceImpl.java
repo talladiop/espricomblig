@@ -61,13 +61,7 @@ public class EnqueteCLServiceImpl extends FactoryD implements IEnqueteCLService{
     }
 
     public synchronized boolean modifier(EnqueteCl enqueteur) {
-         EnqueteCl eqARechercher = new EnqueteCl();
-         
-        eqARechercher.setIdenqueteCl(enqueteur.getIdenqueteCl());
-       
-
-			List<EnqueteCl> eqList = enqueteclDao.findByValue(eqARechercher);
-			return (eqList!=null && !eqList.isEmpty())?false:enqueteclDao.update(enqueteur);
+        return enqueteclDao.update(enqueteur);
     }
 
     public synchronized boolean supprimer(EnqueteCl enqueteur) {

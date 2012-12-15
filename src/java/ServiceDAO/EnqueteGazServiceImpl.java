@@ -44,11 +44,11 @@ private static EnqueteGazServiceImpl instance;
 
         // verification meme enquete
 	prRechercher.setProduitgaz(pr.getProduitgaz());
-        prRechercher.setEnqueteur(pr.getEnqueteur());
-        prRechercher.setPrixCuDetail(pr.getPrixCuDetail());
-        prRechercher.setPrixCuGros(pr.getPrixCuGros());
-        prRechercher.setPrixPeriDetail(pr.getPrixPeriDetail());
-        prRechercher.setPrixPeriGros(pr.getPrixPeriGros());
+        prRechercher.setDepartement(pr.getDepartement());
+       // prRechercher.setPrixCuDetail(pr.getPrixCuDetail());
+        // prRechercher.setPrixCuGros(pr.getPrixCuGros());
+        //prRechercher.setPrixPeriDetail(pr.getPrixPeriDetail());
+        //prRechercher.setPrixPeriGros(pr.getPrixPeriGros());
         prRechercher.setDateEnquete(pr.getDateEnquete());
        
 

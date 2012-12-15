@@ -203,58 +203,43 @@ public class DifferencePrix extends AbstractDao implements IDifferencePrixDao
 				sb.append(" AND id_difference =")
 				.append(pr.getIdDifference());
 			}
-                         if(pr.getProduitgaz()!=null && !"".equals(pr.getProduitgaz()) ){
+                         if(pr.getIdProduit()>=0 && !"".equals(pr.getIdProduit()) ){
 				sb.append(" AND id_produit =")
-				.append(pr.getProduitgaz().getIdProduitgaz())
+				.append(pr.getIdProduit())
 				.append("");
 			}
-			if(pr.getPrixCuGros()!=0 && !"".equals(pr.getPrixCuGros() >0)){
-				sb.append(" AND prix_cu_gros =")
-				.append(pr.getPrixCuGros())
-				.append("");
-			}
-			if(pr.getPrixCuDetail()!=0 && !"".equals(pr.getPrixCuDetail() >0)){
-				sb.append(" AND prix_cu_detail =")
-				.append(pr.getPrixCuDetail())
-				.append("");
-			}
-			if(pr.getPrixPeriGros()!=0 && !"".equals(pr.getPrixPeriGros() >0)){
-				sb.append(" AND prix_peri_gros =")
-				.append(pr.getPrixPeriGros())
-				.append("");
-			}
-                        if(pr.getPrixPeriDetail()!=0 && !"".equals(pr.getPrixPeriDetail() >0)){
-				sb.append(" AND prix_peri_detail =")
-				.append(pr.getPrixPeriDetail())
-				.append("");
-			}
-                        if(pr.getDateEnquete()!=null && !"".equals(pr.getDateEnquete())){
-				sb.append(" AND date_enquete ='")
-				.append(pr.getDateEnquete())
+			if(pr.getTypeProduit() != null && !"".equals(pr.getTypeProduit())){
+				sb.append(" AND type_produit ='")
+				.append(pr.getTypeProduit())
 				.append("'");
 			}
-                         if(pr.getEnqueteur()!=null && !"".equals(pr.getEnqueteur())){
-				sb.append(" AND id_enqueteur =")
-				.append(pr.getEnqueteur().getIdenqueteur())
+			if(pr.getDiference()>=0 && !"".equals(pr.getDiference())){
+				sb.append(" AND diference =")
+				.append(pr.getDiference())
 				.append("");
 			}
-			
-                         if(pr.getDepartement()!=null && !"".equals(pr.getDepartement())){
+			if(pr.getMois()>=0 && !"".equals(pr.getMois())){
+				sb.append(" AND mois =")
+				.append(pr.getMois())
+				.append("");
+			}
+                        if(pr.getAnnee()>=0 && !"".equals(pr.getAnnee())){
+				sb.append(" AND annee =")
+				.append(pr.getAnnee())
+				.append("");
+			}
+                        if(pr.getDepartement()!=null && !"".equals(pr.getDepartement())){
 				sb.append(" AND IDdepartement =")
 				.append(pr.getDepartement().getIDdepartement())
 				.append("");
 			}
-                         if(pr.getValider()!=null && !"".equals(pr.getValider())){
-				sb.append(" AND valider ='")
-				.append(pr.getValider())
-				.append("'");
+                         if(pr.getEtat() >=0 && !"".equals(pr.getEtat())){
+				sb.append(" AND etat =")
+				.append(pr.getEtat())
+				.append("");
 			}
+			
                          
-                          if(pr.getValiderfinale()!=null && !"".equals(pr.getValiderfinale())){
-				sb.append(" AND validerfinale ='")
-				.append(pr.getValiderfinale())
-				.append("'");
-			}
                          
                        
 			String requete = sb.toString().replaceFirst("AND", "WHERE");

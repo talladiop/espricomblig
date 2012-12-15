@@ -35,6 +35,9 @@ public class EnqueteCl implements Serializable
     
     private Enqueteur enqueteur;
     private Departement departement;
+    private String region;
+    private int mois;
+    private int annee;
     private String valider;
     private String validerfinale;
     
@@ -53,6 +56,9 @@ public class EnqueteCl implements Serializable
         this.marchee = "";
         this.enqueteur = null;
         this.departement = null;
+        this.region = "";
+        this.mois = 0;
+        this.annee = 0;
         this.valider = "";
         this.validerfinale = "";
         
@@ -64,7 +70,8 @@ public class EnqueteCl implements Serializable
 
     public EnqueteCl(Integer idenqueteCl, ProduitCl produitcl, String typeCond, 
             int equivalantKgmin, int equivalantKgmax, int prixGros, int prixDetail, 
-            String dateEnquete, String marchee, Enqueteur enqueteur, Departement departement, String valider) {
+            String dateEnquete, String marchee, Enqueteur enqueteur, Departement departement, 
+             String region, int mois, int annee, String valider) {
         this.idenqueteCl = idenqueteCl;
         this.produitcl = produitcl;
         this.typeCond = typeCond;
@@ -76,6 +83,9 @@ public class EnqueteCl implements Serializable
         this.marchee = marchee;
         this.enqueteur = enqueteur;
         this.departement = departement;
+        this.region = region;
+        this.mois = mois;
+        this.annee = annee;
         this.valider = valider;
     }
     
@@ -83,7 +93,8 @@ public class EnqueteCl implements Serializable
     
       public EnqueteCl(ProduitCl produitcl, String typeCond, 
             int equivalantKgmin, int equivalantKgmax, int prixGros, int prixDetail, 
-            String dateEnquete, String marchee, Enqueteur enqueteur, Departement departement, String valider) 
+            String dateEnquete, String marchee, Enqueteur enqueteur, Departement departement,
+             String region, int mois, int annee, String valider) 
       {
        
         this.produitcl = produitcl;
@@ -96,6 +107,9 @@ public class EnqueteCl implements Serializable
         this.marchee = marchee;
         this.enqueteur = enqueteur;
         this.departement = departement;
+        this.region = region;
+        this.mois = mois;
+        this.annee = annee;
         this.valider = valider;
     }
     
@@ -207,6 +221,30 @@ public class EnqueteCl implements Serializable
 
     public void setValiderfinale(String validerfinale) {
         this.validerfinale = validerfinale;
+    }
+
+    public int getAnnee() {
+        return annee;
+    }
+
+    public void setAnnee(int annee) {
+        this.annee = annee;
+    }
+
+    public int getMois() {
+        return mois;
+    }
+
+    public void setMois(int mois) {
+        this.mois = mois;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
     }
 
     

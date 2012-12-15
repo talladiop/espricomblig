@@ -59,10 +59,7 @@ public class EnqueteEquipementServiceImpl extends FactoryD implements IEnqueteEq
 
     @Override
     public boolean modifier(EnqueteEquipement enqueteequipement) {
-       EnqueteEquipement enqueteequipementARechercher = new EnqueteEquipement();
-        enqueteequipementARechercher.setIdenquete(enqueteequipement.getIdenquete());
-                       List<EnqueteEquipement> enqueteequipementList = enqueteequipementDao.findByValue(enqueteequipementARechercher);
-			return (enqueteequipementList!=null && !enqueteequipementList.isEmpty())?false:enqueteequipementDao.save(enqueteequipement);
+       return enqueteequipementDao.update(enqueteequipement);
    
     } 
 

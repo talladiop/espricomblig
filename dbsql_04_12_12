@@ -1,0 +1,576 @@
+-- phpMyAdmin SQL Dump
+-- version 3.4.5
+-- http://www.phpmyadmin.net
+--
+-- Client: localhost
+-- Généré le : Mar 04 Décembre 2012 à 23:04
+-- Version du serveur: 5.5.16
+-- Version de PHP: 5.3.8
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Base de données: `espricomblig`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `autorisation_tonnagecl`
+--
+
+CREATE TABLE IF NOT EXISTS `autorisation_tonnagecl` (
+  `id_auttonnage` int(11) NOT NULL AUTO_INCREMENT,
+  `qt` int(11) NOT NULL,
+  `annee_aut` int(11) NOT NULL,
+  `IDdepartement` int(11) NOT NULL,
+  PRIMARY KEY (`id_auttonnage`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+
+--
+-- Contenu de la table `autorisation_tonnagecl`
+--
+
+INSERT INTO `autorisation_tonnagecl` (`id_auttonnage`, `qt`, `annee_aut`, `IDdepartement`) VALUES
+(1, 65433, 2012, 1),
+(5, 87665, 2012, 14),
+(6, 8754, 2012, 12);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `cuisson`
+--
+
+CREATE TABLE IF NOT EXISTS `cuisson` (
+  `id_cuisson` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_cuisson` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id_cuisson`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=19 ;
+
+--
+-- Contenu de la table `cuisson`
+--
+
+INSERT INTO `cuisson` (`id_cuisson`, `nom_cuisson`) VALUES
+(18, 'Foyer ordinaire'),
+(17, 'Ande'),
+(16, 'FA Format  4 kg'),
+(15, 'FA Format Th'),
+(14, 'FA format '),
+(13, 'FA (10 Kg)');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `departement`
+--
+
+CREATE TABLE IF NOT EXISTS `departement` (
+  `IDdepartement` int(11) NOT NULL AUTO_INCREMENT,
+  `IDregion` int(11) NOT NULL,
+  `Nomdepartement` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`IDdepartement`),
+  UNIQUE KEY `IDdepartement` (`IDdepartement`),
+  KEY `IDregion` (`IDregion`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=46 ;
+
+--
+-- Contenu de la table `departement`
+--
+
+INSERT INTO `departement` (`IDdepartement`, `IDregion`, `Nomdepartement`) VALUES
+(1, 1, 'Dakar'),
+(2, 1, 'Guediawaye'),
+(3, 1, 'Pikine'),
+(4, 1, 'Rufisque'),
+(5, 2, 'Diourbel'),
+(6, 2, 'Bambey'),
+(7, 2, 'Mbacke'),
+(8, 3, 'Fatick'),
+(9, 3, 'Foundiougne'),
+(10, 3, 'Gossas'),
+(11, 4, 'Kaolack'),
+(12, 4, 'Guinguineo'),
+(13, 4, 'Koungheul'),
+(14, 4, 'Nioro du Rip'),
+(15, 5, 'Kaffrine'),
+(16, 5, 'Birkelane'),
+(17, 5, 'Malem-Hodar'),
+(18, 6, 'Kedougou'),
+(19, 6, 'Salemata'),
+(20, 6, 'Saraya'),
+(21, 7, 'Kolda'),
+(22, 7, 'Medina Yoro Foulah'),
+(23, 7, 'Velingara'),
+(24, 8, 'Louga'),
+(25, 8, 'Kebemer'),
+(26, 8, 'Linguere'),
+(27, 9, 'Matam'),
+(28, 9, 'Kanel'),
+(29, 9, 'Ranerou-Ferlo'),
+(30, 10, 'Sedhiou'),
+(31, 10, 'Bounkiling'),
+(32, 10, 'Goudomp'),
+(33, 11, 'Saint-Louis'),
+(34, 11, 'Dagana'),
+(35, 11, 'Podor'),
+(36, 12, 'Thies'),
+(37, 12, 'Mbour'),
+(38, 12, 'Tivaoune'),
+(39, 13, 'Tambacounda'),
+(40, 13, 'Bakel'),
+(41, 13, 'Goudiry'),
+(42, 13, 'Koumpentoum'),
+(43, 14, 'Ziguinchor'),
+(44, 14, 'Bignona'),
+(45, 14, 'Oussouye');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `eauxforet`
+--
+
+CREATE TABLE IF NOT EXISTS `eauxforet` (
+  `id_eauxforet` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_poste` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
+  `tel` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `IDdepartement` int(11) NOT NULL,
+  PRIMARY KEY (`id_eauxforet`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Contenu de la table `eauxforet`
+--
+
+INSERT INTO `eauxforet` (`id_eauxforet`, `nom_poste`, `tel`, `IDdepartement`) VALUES
+(1, 'Poste matam', '777777777', 27),
+(2, 'Poste Bakel', '335687432', 40),
+(3, 'Poste PA', '338976544', 1),
+(4, 'Poste Gossage', '338674312', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `enqueteur`
+--
+
+CREATE TABLE IF NOT EXISTS `enqueteur` (
+  `Id_enqueteur` int(11) NOT NULL AUTO_INCREMENT,
+  `Nom_enqueteur` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `Prenom_enqueteur` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `tel` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(35) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `IDdepartement` int(11) NOT NULL,
+  `login` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `pwd` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `profile` int(4) NOT NULL,
+  `etat_compte` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`Id_enqueteur`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=26 ;
+
+--
+-- Contenu de la table `enqueteur`
+--
+
+INSERT INTO `enqueteur` (`Id_enqueteur`, `Nom_enqueteur`, `Prenom_enqueteur`, `tel`, `email`, `IDdepartement`, `login`, `pwd`, `profile`, `etat_compte`) VALUES
+(17, 'Mbourois', 'Mb', '772133214', '', 37, 'usmbour', 'usmbour123', 41, '1'),
+(18, 'Diourbelois', 'Db', '773421212', '', 5, 'usdiourbel', 'usdiourbel123', 41, '1'),
+(19, 'Mbackeois', 'Mb', '777776655', '', 7, 'usmbacke', 'usmbacke123', 41, '1'),
+(2, 'San', 'Ibrahima', '777777788', 'ibou_423@hotmail.com', 10, 'sane', 'sane123', 41, '1'),
+(1, 'diallo', 'diallo', '775587564', 'diallo@gmail.com', 1, '2012#diallo#ep', '2012#diallo#', 431, '1'),
+(16, 'Dk', 'Dkdk', '775437852', '', 1, 'usdakar', 'usdakar123', 41, '1'),
+(20, 'St.loiusien', 'St', '778889944', '', 33, 'usstlouis', 'usstlouis123', 41, '1'),
+(21, 'Matamois', 'Ma', '332221155', '', 27, 'usmatam', 'usmatam123', 41, '1'),
+(22, 'Tambacoundaois', 'Ta', '332224455', '', 39, 'ustamba', 'ustamba123', 41, '1'),
+(23, 'Kaolackois', 'Ka', '776545432', '', 11, 'uskaolack', 'uskaolack123', 41, '1'),
+(24, 'Centre Dakar', 'Dakar', '338765432', 'dakarcentre@hotmail.com', 1, 'userdakarcentre', 'userdakarcentre', 127, '1'),
+(25, 'Tamba', 'Centre', '338760976', 'centretamba@orange.sn', 39, 'centretamba', 'centretamba', 127, '1');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `enquete_cl`
+--
+
+CREATE TABLE IF NOT EXISTS `enquete_cl` (
+  `Id_enqueteCl` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_produitcl` int(11) NOT NULL,
+  `type_cond` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `equivalant_kg_min` decimal(11,0) NOT NULL,
+  `equivalant_kg_max` decimal(11,0) NOT NULL,
+  `prix_gros` int(11) NOT NULL,
+  `Prix_Detail` int(11) NOT NULL,
+  `date_enquete` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `marchee` varchar(120) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Id_enqueteur` int(11) NOT NULL,
+  `IDdepartement` int(11) NOT NULL,
+  `valider` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `validerfinale` varchar(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`Id_enqueteCl`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=41 ;
+
+--
+-- Contenu de la table `enquete_cl`
+--
+
+INSERT INTO `enquete_cl` (`Id_enqueteCl`, `Id_produitcl`, `type_cond`, `equivalant_kg_min`, `equivalant_kg_max`, `prix_gros`, `Prix_Detail`, `date_enquete`, `marchee`, `Id_enqueteur`, `IDdepartement`, `valider`, `validerfinale`) VALUES
+(8, 8, 'Pot de tomate de 2kg', 1, 1, 150, 150, '27/11/2012', 'Tous', 22, 39, '0', '0'),
+(9, 8, 'Sac de riz contenance 50 kg', 23, 25, 2500, 2500, '27/11/2012', 'local', 22, 39, '0', '0'),
+(10, 8, 'Bassine', 11, 13, 1250, 1250, '27/11/2012', 'local', 22, 39, '0', '0'),
+(11, 8, 'Sac de 50 kg', 47, 52, 4500, 5500, '27/11/2012', 'local', 22, 39, '0', '0'),
+(12, 8, 'Pesee', 1, 1, 150, 150, '27/11/2012', 'local', 22, 39, '0', '0'),
+(13, 9, 'Fagot', 2, 10, 3000, 3500, '27/11/2012', 'local', 22, 39, '0', '0'),
+(14, 8, 'Pot de tomate de 2kg', 1, 1, 250, 275, '27/11/2012', 'local', 20, 33, '0', '0'),
+(15, 8, 'Sac de riz contenance 50 kg', 23, 25, 3500, 3500, '27/11/2012', 'local', 20, 33, '0', '0'),
+(16, 8, 'Sac de 50 kg', 47, 52, 6000, 7500, '27/11/2012', 'local', 20, 33, '0', '0'),
+(17, 8, 'Pesee', 1, 1, 300, 300, '27/11/2012', 'local', 20, 33, '0', '0'),
+(18, 10, 'Sachet en kraft recycl', 1, 1, 100, 100, '27/11/2012', 'local', 20, 33, '0', '0'),
+(19, 8, ' Pot de tomate de 2kg', 1, 1, 200, 200, '27/11/2012', 'local', 19, 7, '0', '0'),
+(20, 8, 'Sac de contenance 50 kg', 30, 35, 4500, 5500, '27/11/2012', 'local', 19, 7, '0', '0'),
+(21, 8, 'pesee', 1, 1, 200, 200, '27/11/2012', 'local', 19, 7, '0', '0'),
+(22, 9, 'Fagot de petits bois', 2, 5, 300, 400, '27/11/2012', 'local', 19, 7, '0', '0'),
+(23, 8, 'Pot de tomate de 2kg', 1, 1, 125, 125, '27/11/2012', 'local', 23, 11, '0', '0'),
+(24, 8, 'Pot de tomate de 2kg', 1, 1, 250, 250, '27/11/2012', 'local', 23, 11, '0', '0'),
+(25, 8, 'Bassine', 12, 12, 3750, 3750, '27/11/2012', 'local', 23, 11, '0', '0'),
+(26, 8, 'Sac de contenance 50 kg', 30, 35, 6500, 8000, '27/11/2012', 'local', 23, 11, '0', '0'),
+(27, 8, ' Pot de tomate de 2kg', 1, 1, 250, 250, '27/11/2012', 'local', 21, 27, '0', '0'),
+(28, 8, 'Pot de tomate de 2kg', 1, 1, 300, 350, '27/11/2012', 'local', 21, 27, '0', '0'),
+(29, 8, 'Sac de contenance 50 kg', 20, 25, 2500, 2500, '27/11/2012', 'local', 21, 27, '0', '0'),
+(30, 8, 'Fagot de branchettes', 4, 5, 500, 500, '27/11/2012', 'local', 21, 27, '0', '0'),
+(31, 8, ' Pot de tomate de 2kg', 1, 1, 250, 250, '27/11/2012', 'local', 17, 37, '0', '0'),
+(32, 8, 'Pot de tomate de 2kg', 1, 1, 350, 350, '27/11/2012', 'local', 17, 37, '0', '0'),
+(33, 8, 'Sac de contenance 50 kg', 20, 25, 2500, 2500, '27/11/2012', 'local', 17, 37, '0', '0'),
+(34, 9, 'Fagot de branchettes', 4, 5, 500, 500, '27/11/2012', 'local', 17, 37, '0', '0'),
+(35, 8, 'pesee', 1, 1, 300, 300, '27/11/2012', 'local', 16, 1, '1', '1'),
+(36, 8, 'Emballage ', 1, 1, 350, 350, '27/11/2012', 'local', 16, 1, '1', '1'),
+(37, 8, 'Sachet en plastique', 0, 0, 350, 350, '27/11/2012', 'local', 16, 1, '1', '1'),
+(38, 8, 'sac GM', 47, 52, 8500, 8500, '27/11/2012', 'local', 16, 1, '1', '1'),
+(39, 8, 'Pot de tomate de 2 kg', 1, 1, 400, 400, '27/11/2012', 'local', 16, 1, '1', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `enquete_eauxforet`
+--
+
+CREATE TABLE IF NOT EXISTS `enquete_eauxforet` (
+  `id_enquete_ef` int(11) NOT NULL AUTO_INCREMENT,
+  `id_produitcl` int(11) NOT NULL,
+  `qt_entrer` int(11) NOT NULL,
+  `date_entrer` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `qt_sortie` int(11) NOT NULL,
+  `date_sortie` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `date_enr` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `id_enqueteur` int(11) NOT NULL,
+  `id_eauxforet` int(11) NOT NULL,
+  `valider` varchar(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id_enquete_ef`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+
+--
+-- Contenu de la table `enquete_eauxforet`
+--
+
+INSERT INTO `enquete_eauxforet` (`id_enquete_ef`, `id_produitcl`, `qt_entrer`, `date_entrer`, `qt_sortie`, `date_sortie`, `date_enr`, `id_enqueteur`, `id_eauxforet`, `valider`) VALUES
+(5, 1, 5000, '18/11/2012', 4500, '17/11/2012', '19/11/2012', 2, 4, '0');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `enquete_equipement`
+--
+
+CREATE TABLE IF NOT EXISTS `enquete_equipement` (
+  `Id_enquete` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_Cuisson` int(11) NOT NULL,
+  `date_enquete` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `IDepartement` int(11) NOT NULL,
+  `Id_enqueteur` int(11) NOT NULL,
+  `prix_achat` int(11) NOT NULL,
+  `prix_vente` int(11) NOT NULL,
+  `qte` int(11) NOT NULL,
+  `valider` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `validerfinale` varchar(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`Id_enquete`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=42 ;
+
+--
+-- Contenu de la table `enquete_equipement`
+--
+
+INSERT INTO `enquete_equipement` (`Id_enquete`, `Id_Cuisson`, `date_enquete`, `IDepartement`, `Id_enqueteur`, `prix_achat`, `prix_vente`, `qte`, `valider`, `validerfinale`) VALUES
+(4, 13, '27/11/2012', 39, 22, 8000, 12000, 1, '1', '0'),
+(5, 14, '27/11/2012', 39, 22, 4500, 7000, 1, '0', '0'),
+(6, 15, '27/11/2012', 39, 22, 2500, 3500, 1, '1', '1'),
+(7, 13, '27/11/2012', 33, 20, 8000, 12000, 1, '0', '0'),
+(8, 14, '27/11/2012', 33, 20, 4500, 5000, 1, '0', '0'),
+(9, 15, '27/11/2012', 33, 20, 4500, 7000, 1, '0', '0'),
+(10, 13, '27/11/2012', 7, 19, 9000, 10000, 1, '0', '0'),
+(11, 14, '27/11/2012', 7, 19, 7500, 7500, 1, '0', '0'),
+(12, 15, '27/11/2012', 7, 19, 3000, 3000, 1, '0', '0'),
+(13, 16, '27/11/2012', 7, 19, 5000, 5500, 1, '0', '0'),
+(14, 17, '27/11/2012', 7, 19, 2500, 3000, 1, '0', '0'),
+(15, 13, '27/11/2012', 11, 23, 9000, 10000, 1, '0', '0'),
+(16, 14, '27/11/2012', 11, 23, 7000, 7500, 1, '0', '0'),
+(17, 15, '27/11/2012', 11, 23, 2500, 3000, 1, '0', '0'),
+(18, 16, '27/11/2012', 11, 23, 5000, 5500, 1, '0', '0'),
+(19, 17, '27/11/2012', 11, 23, 2500, 3000, 1, '0', '0'),
+(20, 18, '27/11/2012', 11, 23, 1500, 2000, 1, '0', '0'),
+(21, 13, '27/11/2012', 5, 18, 9000, 10000, 1, '0', '0'),
+(22, 14, '27/11/2012', 5, 18, 7000, 7500, 1, '0', '0'),
+(23, 15, '27/11/2012', 5, 18, 2500, 3000, 1, '0', '0'),
+(24, 16, '27/11/2012', 5, 18, 5000, 5500, 1, '0', '0'),
+(25, 17, '27/11/2012', 5, 18, 2500, 3000, 1, '0', '0'),
+(26, 18, '27/11/2012', 5, 18, 1500, 2000, 1, '0', '0'),
+(27, 13, '27/11/2012', 27, 21, 9000, 10000, 1, '0', '0'),
+(28, 14, '27/11/2012', 27, 21, 7000, 7500, 1, '0', '0'),
+(29, 15, '27/11/2012', 27, 21, 2500, 3000, 1, '0', '0'),
+(30, 16, '27/11/2012', 27, 21, 5000, 5500, 1, '0', '0'),
+(31, 18, '27/11/2012', 27, 21, 1500, 2000, 1, '0', '0'),
+(32, 13, '27/11/2012', 37, 17, 9000, 10000, 1, '0', '0'),
+(33, 14, '27/11/2012', 37, 17, 7000, 7500, 1, '0', '0'),
+(34, 15, '27/11/2012', 37, 17, 2500, 3000, 1, '0', '0'),
+(35, 16, '27/11/2012', 37, 17, 5000, 5500, 1, '0', '0'),
+(36, 18, '27/11/2012', 37, 17, 1500, 2000, 1, '0', '0'),
+(37, 13, '27/11/2012', 1, 16, 9000, 10000, 1, '0', '0'),
+(38, 14, '27/11/2012', 1, 16, 7000, 7500, 1, '0', '0'),
+(39, 15, '27/11/2012', 1, 16, 2500, 3000, 1, '0', '0'),
+(40, 16, '27/11/2012', 1, 16, 5000, 5500, 1, '0', '0'),
+(41, 18, '27/11/2012', 1, 16, 1500, 2000, 1, '1', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `enquete_gaz`
+--
+
+CREATE TABLE IF NOT EXISTS `enquete_gaz` (
+  `id_enquete_gaz` int(11) NOT NULL AUTO_INCREMENT,
+  `id_produitgaz` int(11) NOT NULL,
+  `prix_cu_gros` int(11) NOT NULL,
+  `prix_cu_detail` int(11) NOT NULL,
+  `prix_peri_gros` int(11) NOT NULL,
+  `prix_peri_detail` int(11) NOT NULL,
+  `date_enquete` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `id_enqueteur` int(11) NOT NULL,
+  `IDdepartement` int(11) NOT NULL,
+  `valider` varchar(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  `validerfinale` varchar(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id_enquete_gaz`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=80 ;
+
+--
+-- Contenu de la table `enquete_gaz`
+--
+
+INSERT INTO `enquete_gaz` (`id_enquete_gaz`, `id_produitgaz`, `prix_cu_gros`, `prix_cu_detail`, `prix_peri_gros`, `prix_peri_detail`, `date_enquete`, `id_enqueteur`, `IDdepartement`, `valider`, `validerfinale`) VALUES
+(79, 13, 24025, 24025, 0, 0, '27/11/2012', 16, 1, '1', '1'),
+(78, 12, 7905, 7905, 0, 0, '27/11/2012', 16, 1, '1', '0'),
+(77, 11, 5510, 5510, 0, 0, '27/11/2012', 16, 1, '1', '0'),
+(76, 10, 3700, 3700, 0, 0, '27/11/2012', 16, 1, '1', '0'),
+(75, 9, 1670, 1670, 0, 0, '27/11/2012', 16, 1, '1', '0'),
+(74, 13, 25580, 26800, 0, 0, '27/11/2012', 17, 37, '0', '0'),
+(73, 12, 8135, 8700, 0, 0, '27/11/2012', 17, 37, '0', '0'),
+(72, 11, 5900, 6130, 0, 0, '27/11/2012', 17, 37, '0', '0'),
+(71, 10, 4100, 4200, 0, 0, '27/11/2012', 17, 37, '0', '0'),
+(70, 9, 1850, 1890, 0, 0, '27/11/2012', 17, 37, '0', '0'),
+(69, 9, 1850, 1890, 0, 0, '27/11/2012', 21, 27, '0', '0'),
+(68, 12, 8135, 8700, 0, 0, '27/11/2012', 21, 27, '0', '0'),
+(67, 11, 5900, 6130, 0, 0, '27/11/2012', 21, 27, '0', '0'),
+(66, 10, 4100, 4200, 0, 0, '27/11/2012', 21, 27, '0', '0'),
+(64, 10, 3760, 3845, 0, 0, '27/11/2012', 23, 11, '0', '0'),
+(63, 9, 1740, 1775, 0, 0, '27/11/2012', 23, 11, '0', '0'),
+(62, 13, 24530, 24530, 0, 0, '27/11/2012', 19, 7, '0', '0'),
+(61, 12, 8120, 8120, 0, 0, '27/11/2012', 19, 7, '0', '0'),
+(60, 11, 5560, 5670, 0, 0, '27/11/2012', 19, 7, '0', '0'),
+(59, 10, 3720, 3805, 0, 0, '27/11/2012', 19, 7, '0', '0'),
+(58, 9, 1690, 1725, 0, 0, '27/11/2012', 19, 7, '0', '0'),
+(57, 13, 26695, 26695, 0, 0, '27/11/2012', 20, 33, '0', '0'),
+(56, 12, 8585, 8585, 0, 0, '27/11/2012', 20, 33, '0', '0'),
+(55, 10, 3805, 3805, 0, 0, '27/11/2012', 20, 33, '0', '0'),
+(54, 9, 1780, 1780, 0, 0, '27/11/2012', 20, 33, '0', '0'),
+(53, 12, 8290, 8505, 0, 0, '28/11/2012', 22, 39, '0', '0'),
+(52, 11, 6000, 5890, 0, 0, '28/11/2012', 22, 39, '0', '0'),
+(51, 10, 3960, 4060, 0, 0, '28/11/2012', 22, 39, '1', '0'),
+(50, 9, 1800, 1840, 0, 0, '28/11/2012', 22, 39, '1', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `inventairest_gaz`
+--
+
+CREATE TABLE IF NOT EXISTS `inventairest_gaz` (
+  `id_enventairegaz` int(11) NOT NULL AUTO_INCREMENT,
+  `id_produit` int(11) NOT NULL,
+  `qt` int(11) NOT NULL,
+  `date_enr` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `id_enqueteur` int(11) NOT NULL,
+  `IDdepartement` int(11) NOT NULL,
+  `valider` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `validerfinale` varchar(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id_enventairegaz`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=48 ;
+
+--
+-- Contenu de la table `inventairest_gaz`
+--
+
+INSERT INTO `inventairest_gaz` (`id_enventairegaz`, `id_produit`, `qt`, `date_enr`, `id_enqueteur`, `IDdepartement`, `valider`, `validerfinale`) VALUES
+(6, 9, 400, '29/11/2012', 22, 39, '1', '1'),
+(8, 10, 1800, '3/12/2012', 22, 39, '0', '0'),
+(9, 11, 1, '3/12/2012', 22, 39, '0', '0'),
+(10, 12, 1, '3/12/2012', 22, 39, '0', '0'),
+(11, 13, 1, '3/12/2012', 22, 39, '0', '0'),
+(12, 9, 400, '3/12/2012', 22, 39, '0', '0'),
+(13, 9, 1, '4/12/2012', 20, 33, '0', '0'),
+(14, 10, 1, '4/12/2012', 20, 33, '0', '0'),
+(15, 11, 1, '4/12/2012', 20, 33, '0', '0'),
+(16, 12, 1, '4/12/2012', 20, 33, '0', '0'),
+(17, 13, 1, '4/12/2012', 20, 33, '0', '0'),
+(18, 9, 1600, '4/12/2012', 19, 7, '0', '0'),
+(19, 10, 2800, '4/12/2012', 19, 7, '0', '0'),
+(20, 11, 1, '4/12/2012', 19, 7, '0', '0'),
+(21, 12, 1, '4/12/2012', 19, 7, '0', '0'),
+(22, 13, 1, '4/12/2012', 19, 7, '0', '0'),
+(23, 9, 1050, '4/12/2012', 23, 11, '0', '0'),
+(24, 10, 3081, '4/12/2012', 23, 11, '0', '0'),
+(25, 11, 1, '4/12/2012', 23, 11, '0', '0'),
+(26, 12, 1, '4/12/2012', 23, 11, '0', '0'),
+(27, 13, 1, '4/12/2012', 23, 11, '0', '0'),
+(28, 9, 1, '4/12/2012', 18, 5, '0', '0'),
+(29, 10, 1, '4/12/2012', 18, 5, '0', '0'),
+(30, 11, 1, '4/12/2012', 18, 5, '0', '0'),
+(31, 12, 1, '4/12/2012', 18, 5, '0', '0'),
+(32, 13, 1, '4/12/2012', 18, 5, '0', '0'),
+(33, 9, 5562, '4/12/2012', 21, 27, '0', '0'),
+(34, 10, 14740, '4/12/2012', 21, 27, '0', '0'),
+(35, 11, 1, '4/12/2012', 21, 27, '0', '0'),
+(36, 12, 1, '4/12/2012', 21, 27, '0', '0'),
+(37, 13, 1, '4/12/2012', 21, 27, '0', '0'),
+(38, 9, 5562, '4/12/2012', 17, 37, '0', '0'),
+(39, 10, 14740, '4/12/2012', 17, 37, '0', '0'),
+(40, 11, 1, '4/12/2012', 17, 37, '0', '0'),
+(41, 12, 1, '4/12/2012', 17, 37, '0', '0'),
+(42, 13, 1, '4/12/2012', 17, 37, '0', '0'),
+(43, 9, 1, '4/12/2012', 16, 1, '0', '0'),
+(44, 10, 1, '4/12/2012', 16, 1, '0', '0'),
+(45, 11, 1, '4/12/2012', 16, 1, '0', '0'),
+(46, 12, 1, '4/12/2012', 16, 1, '0', '0'),
+(47, 13, 1, '4/12/2012', 16, 1, '0', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `localite`
+--
+
+CREATE TABLE IF NOT EXISTS `localite` (
+  `id_localite` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_localite` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `id_departement` int(11) NOT NULL,
+  PRIMARY KEY (`id_localite`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+
+--
+-- Contenu de la table `localite`
+--
+
+INSERT INTO `localite` (`id_localite`, `nom_localite`, `id_departement`) VALUES
+(1, 'médina', 1),
+(2, 'Médina Yoro Foulla', 21),
+(3, 'test local', 1),
+(4, 'fatick', 1),
+(5, 'Fanaye', 13),
+(6, 'Boundou', 6),
+(7, 'Toubatour', 6);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `produit_cl`
+--
+
+CREATE TABLE IF NOT EXISTS `produit_cl` (
+  `id_produitcl` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_produitcl` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id_produitcl`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
+
+--
+-- Contenu de la table `produit_cl`
+--
+
+INSERT INTO `produit_cl` (`id_produitcl`, `nom_produitcl`) VALUES
+(10, 'Bio charbon'),
+(9, 'Bois de chauffe'),
+(8, 'Charbon de bois');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `produit_gaz`
+--
+
+CREATE TABLE IF NOT EXISTS `produit_gaz` (
+  `id_produitgaz` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_produitgaz` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id_produitgaz`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=14 ;
+
+--
+-- Contenu de la table `produit_gaz`
+--
+
+INSERT INTO `produit_gaz` (`id_produitgaz`, `nom_produitgaz`) VALUES
+(13, 'GAZ 38 kg'),
+(12, 'GAZ 12kg'),
+(11, 'GAZ 9kg'),
+(10, 'GAZ 6kg'),
+(9, 'GAZ 2.7 kg');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `region`
+--
+
+CREATE TABLE IF NOT EXISTS `region` (
+  `IDregion` int(11) NOT NULL AUTO_INCREMENT,
+  `Nomregion` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`IDregion`),
+  UNIQUE KEY `IDregion` (`IDregion`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=15 ;
+
+--
+-- Contenu de la table `region`
+--
+
+INSERT INTO `region` (`IDregion`, `Nomregion`) VALUES
+(1, 'Dakar'),
+(2, 'Diourbel'),
+(3, 'Fatick'),
+(4, 'Kaolack'),
+(5, 'Kaffrine'),
+(6, 'Kedougou'),
+(7, 'Kolda'),
+(8, 'Louga'),
+(9, 'Matam'),
+(10, 'Sedhiou'),
+(11, 'Saint-Louis'),
+(12, 'Thies'),
+(13, 'Tambacouda'),
+(14, 'Ziguinchor');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

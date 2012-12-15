@@ -9,6 +9,7 @@ package FactoryService;
 import InterfaceService.IAutorisationTonnageService;
 import InterfaceService.ICuissonService;
 import InterfaceService.IDeparte;
+import InterfaceService.IDifferencePrixService;
 import InterfaceService.IEauetforetService;
 import InterfaceService.IEnqueteCLService;
 import InterfaceService.IEnqueteEauxForetService;
@@ -24,6 +25,7 @@ import InterfaceService.IValiderEmailService;
 import ServiceDAO.AutorisationTonnageServiceImpl;
 import ServiceDAO.CuissonServiceImpl;
 import ServiceDAO.DeparteServiceImpl;
+import ServiceDAO.DifferencePrixServiceImpl;
 import ServiceDAO.EauetforetServiceImpl;
 import ServiceDAO.EnqueteCLServiceImpl;
 import ServiceDAO.EnqueteEauxForetServiceImpl;
@@ -65,6 +67,7 @@ public  class FactoryService extends HttpServlet
               public IEnqueteCLService enqueteclServiceDao= EnqueteCLServiceImpl.getInstance();
                public IValiderEmailService valideremailService= ValiderEmailServiceImpl.getInstance();
               public IEnqueteEquipementService enqueteequipementSrv = EnqueteEquipementServiceImpl.getInstance();
+               public IDifferencePrixService diferenceprixServiceDao = DifferencePrixServiceImpl.getInstance();
             
        
 }

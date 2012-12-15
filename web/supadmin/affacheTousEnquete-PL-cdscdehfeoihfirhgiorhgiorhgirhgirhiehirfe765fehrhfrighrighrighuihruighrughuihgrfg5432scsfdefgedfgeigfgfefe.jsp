@@ -116,6 +116,11 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 		    <li><a href="produitCLcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Produit CL</a></li>
 		    <li><a href="cuissoncdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Equipement cuisson</a></li>
 		    <li><a href="enqueteurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Enqueteur</a></li>
+		    <li>
+		      <form name="form1" method="post" action="LogOutAdmin">
+		        <input type="submit" name="button3" id="button3" value="Déconnexion">
+	          </form>
+	        </li>
 	      </ul>
 	  </div>
 		<h2>&nbsp; </h2>
@@ -139,26 +144,25 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 <a href="affacheTousEnquetecdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp?toutvalide=543sdhhhcdschdc"></a>
 <table width="1190" border="0" align="center" cellpadding="0" cellspacing="0" class="tail12">
   <tr bgcolor="#AAAAFF">
-    <td colspan="17" align="center" bgcolor="#CCCCCC"><strong>Liste de toutes les enquêtes de Produit Ligneux de tout Département du Sénégal</strong></td>
+    <td colspan="16" align="center" bgcolor="#CCCCCC"><strong>Liste de toutes les enquêtes de Produit Ligneux de tous les Départements du Sénégal</strong></td>
   </tr>
   <tr bgcolor="#AAAAFF">
     <td width="107" bgcolor="#ADADAD"><div align="center"><strong>Produit</strong></div></td>
     <td width="3" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="136" bgcolor="#ADADAD"><strong>Type Condictionnement</strong></td>
+    <td width="163" bgcolor="#ADADAD"><strong>Type Conditionnement</strong></td>
     <td width="3" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="123" bgcolor="#ADADAD"><strong>Equivalant en Kg min</strong></td>
+    <td width="120" bgcolor="#ADADAD"><strong>Equival. en Kg Min</strong></td>
     <td width="3" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="132" bgcolor="#ADADAD"><strong>Equivalant en Kg max</strong></td>
+    <td width="108" bgcolor="#ADADAD"><strong>Equival. en Kg Max</strong></td>
     <td width="3" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="96" bgcolor="#ADADAD"><div align="center"><strong><span class="feature-title">Prix en Gros</span></strong></div></td>
+    <td width="96" bgcolor="#ADADAD"><div align="center"><strong><span class="feature-title">Prix en gros</span></strong></div></td>
     <td width="3" align="center" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="90" align="center" bgcolor="#ADADAD"><strong><span class="feature-title">Prix en Détail</span></strong></td>
+    <td width="90" align="center" bgcolor="#ADADAD"><strong><span class="feature-title">Prix en détail</span></strong></td>
     <td width="3" align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td width="137" align="center" bgcolor="#ADADAD"><strong><span class="feature-title">Date d'enregistrement</span></strong></td>
     <td width="113" align="center" bgcolor="#ADADAD"><strong><span class="feature-title">Département</span></strong></td>
     <td width="3" align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td width="122" align="center" bgcolor="#ADADAD"><strong>Région</strong></td>
-    <td width="46" align="center" bgcolor="#FFFFFF">modifier</td>
   </tr>
   <%
             //instentiation de l'objet enquetegaz
@@ -190,7 +194,6 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
     <td align="center" bgcolor="#F1F1F1"><span class="bleu"><%=dest.getDepartement().getNomdepartement() %></span></td>
     <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="center" bgcolor="#F1F1F1"><span class="bleu"><%=dest.getDepartement().getRegion().getNomregion() %></span></td>
-    <td align="center" bgcolor="#FFFFFF"><img src="images/modif.JPG" width="24" height="21"></td>
     <td width="67" align="center" bgcolor="#F1F1F1"><strong><span class="feature-title"><a href="affacheTousEnquete-PL-cdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp?valider=<%=dest.getIdenqueteCl() %>">valider</a></span></strong></td>
   </tr>
   <%
