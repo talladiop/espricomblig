@@ -87,7 +87,11 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 	      <li><a href="produitCLcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Suivi_CL</a></li>
 	      <li><a href="inventairegazcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Inventaire_Stock_gaz</a></li>
 	      <li><a href="cuissoncdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Suivi_Eq-cuisson</a></li>
-	      <li><a href="enqueteurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Enqueteur</a></li>
+	      <li>
+	        <form name="form1" method="post" action="LogOutEnqueteur">
+	          <input type="submit" name="button2" id="button2" value="Déconnexion">
+            </form>
+          </li>
         </ul>
       </div>
 	</div>
@@ -142,7 +146,19 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
     </tr>
     <tr>
       <td align="right" bgcolor="#D0D0D0">Type de condictionnemen<span class="red"> *</span></td>
-      <td bgcolor="#D0D0D0"><input name="typecondition" type="text" id="typecondition" value="<%=ef.getTypeCond() %>" size="20" required="true" placeholder="Ex: sac, pôt" /></td>
+      <td bgcolor="#D0D0D0"><select  required="true" name="typecondition" id="typecondition">
+       
+	        <option value="Pot de tomate de 2kg" <% if(ef.getTypeCond().equalsIgnoreCase("Pot de tomate de 2kg"))out.print("Selected") ;%>>Pot de tomate de 2kg</option>
+                <option value="Sac de riz contenance 50 kg" <% if(ef.getTypeCond().equalsIgnoreCase("Sac de riz contenance 50 kg"))out.print("Selected") ;%>>Sac de riz contenance 50 kg</option>
+                <option value="Bassine en plastique" <% if(ef.getTypeCond().equalsIgnoreCase("Bassine en plastique"))out.print("Selected") ;%>>Bassine en plastique</option>
+                <option value="Sac de 50 kg" <% if(ef.getTypeCond().equalsIgnoreCase("Sac de 50 kg"))out.print("Selected") ;%>>Sac de 50 kg</option>
+                <option value="Pesée" <% if(ef.getTypeCond().equalsIgnoreCase("Pesée"))out.print("Selected") ;%>>Pes&eacute;e</option>
+                <option value="fagot" <% if(ef.getTypeCond().equalsIgnoreCase("fagot"))out.print("Selected") ;%>>fagot</option>
+                <option value="Sachet en kraft de 1 kg recyclé" <% if(ef.getTypeCond().equalsIgnoreCase("Sachet en kraft de 1 kg recyclé"))out.print("Selected") ;%>>Sachet en kraft de 1 kg recyclé</option>
+                <option value="½ Pot de tomate de 2kg" <% if(ef.getTypeCond().equalsIgnoreCase("½ Pot de tomate de 2kg"))out.print("Selected") ;%>>&frac12; Pot de tomate de 2kg</option>
+			
+		              
+      </select></td>
       <td bgcolor="#FFFFFF"> </td>
       <td align="right" bgcolor="#D0D0D0">Prix en détail *</td>
       <td bgcolor="#D0D0D0"><input name="pd" type="text" id="pd" value="<%=ef.getPrixDetail() %>" size="14" maxlength="9" required="true" placeholder="Ex: 1550" />
@@ -226,7 +242,7 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
     <td align="left" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="left" bgcolor="#F1F1F1"><strong><span class="bleu"><%=dest.getPrixDetail() %></span></strong></td>
     <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
-    <td align="center" bgcolor="#F1F1F1">&nbsp;</td>
+    <td align="center" bgcolor="#F1F1F1"><strong><span class="bleu"><%=dest.getMarchee() %></span></strong></td>
     <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="center"><strong><span class="feature-title"><a href="modifenqueteCLcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp?dest65432id5432=<%=dest.getIdenqueteCl() %>">modifier</a></span></strong></td>
   </tr>

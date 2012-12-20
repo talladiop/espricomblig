@@ -69,8 +69,8 @@ public class EnqueteCLDaoImpl extends AbstractDao implements IEnqueteCLDao
                                         eq.setProduitcl(pcl);
                                         
 				        eq.setTypeCond(rs.getString("type_cond"));
-                                        eq.setEquivalantKgmin(Integer.parseInt(rs.getString("equivalant_kg_min")));
-                                        eq.setEquivalantKgmax(Integer.parseInt(rs.getString("equivalant_kg_max")));
+                                        eq.setEquivalantKgmin(Float.parseFloat(rs.getString("equivalant_kg_min")));
+                                        eq.setEquivalantKgmax(Float.parseFloat(rs.getString("equivalant_kg_max")));
                                         eq.setPrixGros(Integer.parseInt(rs.getString("prix_gros")));
                                         eq.setPrixDetail(Integer.parseInt(rs.getString("Prix_Detail")));
 					eq.setDateEnquete(rs.getString("date_enquete"));

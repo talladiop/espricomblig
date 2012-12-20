@@ -116,6 +116,14 @@
         <servlet-name>LogOutAdmin</servlet-name>
         <servlet-class>servlet.LogOutAdmin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LogOutEnqueteur</servlet-name>
+        <servlet-class>servlet.LogOutEnqueteur</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ModifSuperviseur</servlet-name>
+        <servlet-class>servlet.ModifSuperviseur</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>InsertionLocalite</servlet-name>
         <url-pattern>/adminspace/InsertionLocalite</url-pattern>
@@ -231,6 +239,14 @@
     <servlet-mapping>
         <servlet-name>LogOutAdmin</servlet-name>
         <url-pattern>/supadmin/LogOutAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogOutEnqueteur</servlet-name>
+        <url-pattern>/adminspace/LogOutEnqueteur</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModifSuperviseur</servlet-name>
+        <url-pattern>/supadmin/ModifSuperviseur</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

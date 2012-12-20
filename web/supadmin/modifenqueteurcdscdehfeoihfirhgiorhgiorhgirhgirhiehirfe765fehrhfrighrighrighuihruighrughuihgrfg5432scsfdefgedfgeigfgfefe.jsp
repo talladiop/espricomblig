@@ -74,6 +74,8 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 <!--
 .bleu {color: #46A3FF;
 }
+.bleu1 {color: #46A3FF;
+}
 -->
 </style>
 </head>
@@ -90,6 +92,7 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 	      <li><a href="produitCLcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Produit CL</a></li>
 	      <li><a href="cuissoncdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Equipement cuisson</a></li>
 	      <li><a href="enqueteurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Enqueteur</a></li>
+	      <li><a href="superviseurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Superviseur</a></li>
 	      <li>
 	        <form name="form1" method="post" action="LogOutAdmin">
 	          <input type="submit" name="button3" id="button3" value="Déconnexion">
@@ -105,7 +108,7 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
   <!-- start page --></p>
 <form id="form1" name="form1" method="post" 
 class="form-inline well" action="ModifEnqueteur">
-  <table width="400" border="0" align="center" cellpadding="0" cellspacing="0">
+  <table width="410" border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
       <%
         Enqueteur ef = new Enqueteur();
@@ -114,7 +117,7 @@ class="form-inline well" action="ModifEnqueteur">
 
 
 %>
-      <td colspan="2" align="center" bgcolor="#D0D0D0">Modification  Enquéteur</td>
+      <td colspan="2" align="center" bgcolor="#C6FFD9">Modification  Enquéteur</td>
     </tr>
     <tr>
       <td colspan="2" align="center" bgcolor="#D0D0D0"><% 
@@ -132,9 +135,9 @@ class="form-inline well" action="ModifEnqueteur">
 	%></td>
     </tr>
     <tr>
-      <td align="right" bgcolor="#D0D0D0"><label for="nom">Nom enquéteur </label>
+      <td width="162" align="right" bgcolor="#D0D0D0"><label for="nom">Nom enquéteur </label>
         <span class="red">*</span></td>
-      <td bgcolor="#D0D0D0"><input name="nom" type="text" id="nom" value="<%=ef.getNomenqueteur() %>" size="20" required="true" /></td>
+      <td width="248" bgcolor="#D0D0D0"><input name="nom" type="text" id="nom" value="<%=ef.getNomenqueteur() %>" size="20" required="true" /></td>
     </tr>
     <tr>
       <td align="right" bgcolor="#D0D0D0"><label for="prenom">Prénom enquéteur </label>
@@ -157,7 +160,7 @@ class="form-inline well" action="ModifEnqueteur">
       <input name="departement" type="hidden" id="departement" value="<%=ef.getDepartement().getIDdepartement() %>" /></td>
     </tr>
     <tr>
-      <td colspan="2" align="center" bgcolor="#D0D0D0">Information sur le compte</td>
+      <td colspan="2" align="center" bgcolor="#C6FFD9">Information sur le compte</td>
     </tr>
     <tr>
       <td align="right" bgcolor="#D0D0D0"><label for="login">Login </label>
@@ -180,23 +183,27 @@ class="form-inline well" action="ModifEnqueteur">
       <td colspan="2" bgcolor="#D0D0D0">Les champs en <span class="red">*</span> ne doivent pas être vide</td>
     </tr>
     <tr>
-      <td colspan="2" bgcolor="#D0D0D0">&nbsp;</td>
+      <td colspan="2" bgcolor="#C6FFD9">&nbsp;</td>
     </tr>
   </table>
 </form>
-<p>&nbsp;</p>
-<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td colspan="8" align="center" bgcolor="#EEEEEE">Liste de vos enquéteurs</td>
+<table width="858" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#AAAAFF">
+    <td colspan="14" align="center" bgcolor="#EAEAEA">Liste de vos enquéteurs</td>
   </tr>
   <tr bgcolor="#D0D0D0">
-    <td><div align="center"><strong><span class="feature-title">Prenom Nom</span></strong></div></td>
-    <td><div align="center"><strong><span class="feature-title">Téléphone</span></strong></div></td>
-    <td><div align="center"><strong><span class="feature-title">E-mail</span></strong></div></td>
-    <td bgcolor="#D0D0D0"><div align="center"><strong><span class="feature-title">Département de l'enquéteur</span></strong></div></td>
-    <td><strong><span class="feature-title">Région</span></strong></td>
-    <td><span class="feature-title"><strong>modifier</strong></span></td>
-    <td colspan="2"><span class="feature-title"><strong>suspendre</strong></span></td>
+    <td width="138"><div align="center"><strong><span class="feature-title">Prenom Nom</span></strong></div></td>
+    <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
+    <td width="78"><div align="center"><strong><span class="feature-title">Téléphone</span></strong></div></td>
+    <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
+    <td width="69"><div align="center"><strong><span class="feature-title">E-mail</span></strong></div></td>
+    <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
+    <td width="200"><div align="center"><strong><span class="feature-title">Département de l'enquéteur</span></strong></div></td>
+    <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
+    <td width="80"><strong><span class="feature-title">Région</span></strong></td>
+    <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
+    <td width="114"><span class="feature-title"><strong>modifier</strong></span></td>
+    <td colspan="3" align="center">suspendre/activer</td>
   </tr>
   <%
             Enqueteur eq = new Enqueteur();
@@ -210,19 +217,25 @@ class="form-inline well" action="ModifEnqueteur">
 %>
   <tr>
     <td align="left" bgcolor="#F1F1F1"><span class="feature-title"><%=dest.getPrenomenqueteur() %><%="  "%><%=dest.getNomenqueteur() %></span></td>
+    <td align="left" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="left" bgcolor="#F1F1F1"><span class="feature-title"><%=dest.getTel() %></span></td>
+    <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="center" bgcolor="#F1F1F1"><strong><span class="feature-title"><%=dest.getEmail() %></span></strong></td>
-    <td align="center" bgcolor="#F1F1F1"><strong><span class="bleu"><%=dest.getDepartement().getNomdepartement() %></span></strong></td>
-    <td align="left"><strong><span class="bleu"><%=dest.getDepartement().getRegion().getNomregion() %></span></strong></td>
-    <td align="center"><strong><span class="feature-title"><a href="modifenqueteurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp?dest65432id5432=<%=dest.getIdenqueteur() %>">modifier</a></span></strong></td>
-    <td align="center" bgcolor="#FFFFFF"><strong><span class="feature-title">
+    <td align="left" bgcolor="#FFFFFF">&nbsp;</td>
+    <td align="left" bgcolor="#F1F1F1"><strong><span class="bleu1"><%=dest.getDepartement().getNomdepartement() %></span></strong></td>
+    <td align="left">&nbsp;</td>
+    <td align="left" bgcolor="#FFFFFF"><strong><span class="bleu1"><%=dest.getDepartement().getRegion().getNomregion() %></span></strong></td>
+    <td align="center">&nbsp;</td>
+    <td align="center"><strong><span class="feature-title"><a href="modifenqueteurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp?dest65432id5432=<%=dest.getIdenqueteur() %>&frd=64&dgg=21">modifier</a></span></strong></td>
+    <td width="4" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+    <td width="77" align="center" bgcolor="#FFFFFF"><strong><span class="feature-title">
       <% if (dest.getEtatcompte().equalsIgnoreCase("0")) {%>
-      <a href="enqueteurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp?3456kjuylisteby453juyt876=<%=dest.getIdenqueteur() %>activer=<%=dest.getIdenqueteur() %>"><img src="images/interdit.jpg" alt="" width="20" height="16" border="0" /></a>
+      <a href="enqueteurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp?3456kjuylisteby453juyt876=<%=dest.getIdenqueteur() %>&activer=<%=dest.getIdenqueteur() %>"><img src="images/activer.png" alt="" width="19" height="19" border="0" /></a>
       <%}%>
     </span></strong></td>
-    <td align="center" bgcolor="#FFFFFF"><strong><span class="feature-title">
+    <td width="78" align="center" bgcolor="#FFFFFF"><strong><span class="feature-title">
       <% if (dest.getEtatcompte().equalsIgnoreCase("1")) {%>
-      <a href="enqueteurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp?3456kjuylisteby453juyt876=<%=dest.getIdenqueteur() %>suspend=<%=dest.getIdenqueteur() %>"><img src="images/activer.jpg" alt="" width="20" height="16" border="0" /></a>
+      <a href="enqueteurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp?3456kjuylisteby453juyt876=<%=dest.getIdenqueteur() %>&suspend=<%=dest.getIdenqueteur() %>"><img src="images/interdit.jpg" alt="" width="17" height="17" border="0" /></a>
       <%}%>
     </span></strong></td>
   </tr>

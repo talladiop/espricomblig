@@ -154,7 +154,7 @@ ProduitGaz prd = service.produitgazServiceDao.findByPrimaryKey(9);
 						if(ee1.getMois() == mois1 && ee1.getMois() <= mois2)
 						{
 						n1s = ee1.getPrixCuDetail() - ee1.getPrixCuGros()+n1s; 
-						}
+					 	}
 					}
                    out.println(n1s); 
 %></td>

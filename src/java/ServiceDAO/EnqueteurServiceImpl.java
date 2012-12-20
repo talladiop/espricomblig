@@ -54,17 +54,7 @@ public class EnqueteurServiceImpl extends FactoryD implements IEnqueteurService{
     }
 
     public synchronized boolean modifier(Enqueteur enqueteur) {
-         Enqueteur eqARechercher = new Enqueteur();
-         
-        eqARechercher.setIdenqueteur(enqueteur.getIdenqueteur());
-        eqARechercher.setNomenqueteur(enqueteur.getNomenqueteur());
-        eqARechercher.setPrenomenqueteur(enqueteur.getPrenomenqueteur());
-        eqARechercher.setTel(enqueteur.getTel());
-        eqARechercher.setEmail(enqueteur.getEmail());
-        eqARechercher.setDepartement(enqueteur.getDepartement());
-
-			List<Enqueteur> eqList = enqueteurDao.findByValue(eqARechercher);
-			return (eqList!=null && !eqList.isEmpty())?false:enqueteurDao.update(enqueteur);
+        return enqueteurDao.update(enqueteur);
     }
 
     public synchronized boolean supprimer(Enqueteur enqueteur) {
@@ -92,7 +82,7 @@ public class EnqueteurServiceImpl extends FactoryD implements IEnqueteurService{
 
     public synchronized boolean desactiver(int pk) 
     {
-        return enqueteurDao.activer(pk);
+        return enqueteurDao.desactiver(pk);
     }
       
      

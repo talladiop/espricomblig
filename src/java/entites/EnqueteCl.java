@@ -21,9 +21,9 @@ public class EnqueteCl implements Serializable
     
     private String typeCond;
    
-    private int equivalantKgmin;
+    private float equivalantKgmin;
     
-     private int equivalantKgmax;
+     private float equivalantKgmax;
     
     private int prixGros;
     
@@ -69,7 +69,7 @@ public class EnqueteCl implements Serializable
     }
 
     public EnqueteCl(Integer idenqueteCl, ProduitCl produitcl, String typeCond, 
-            int equivalantKgmin, int equivalantKgmax, int prixGros, int prixDetail, 
+            float equivalantKgmin, float equivalantKgmax, int prixGros, int prixDetail, 
             String dateEnquete, String marchee, Enqueteur enqueteur, Departement departement, 
              String region, int mois, int annee, String valider) {
         this.idenqueteCl = idenqueteCl;
@@ -92,7 +92,7 @@ public class EnqueteCl implements Serializable
     
     
       public EnqueteCl(ProduitCl produitcl, String typeCond, 
-            int equivalantKgmin, int equivalantKgmax, int prixGros, int prixDetail, 
+            float equivalantKgmin, float equivalantKgmax, int prixGros, int prixDetail, 
             String dateEnquete, String marchee, Enqueteur enqueteur, Departement departement,
              String region, int mois, int annee, String valider) 
       {
@@ -133,22 +133,25 @@ public class EnqueteCl implements Serializable
         this.typeCond = typeCond;
     }
 
-    public int getEquivalantKgmax() {
+    public float getEquivalantKgmax() {
         return equivalantKgmax;
     }
 
-    public void setEquivalantKgmax(int equivalantKgmax) {
+    public void setEquivalantKgmax(float equivalantKgmax) {
         this.equivalantKgmax = equivalantKgmax;
     }
 
-    public int getEquivalantKgmin() {
+    public float getEquivalantKgmin() {
         return equivalantKgmin;
     }
 
-    public void setEquivalantKgmin(int equivalantKgmin) {
+    public void setEquivalantKgmin(float equivalantKgmin) {
         this.equivalantKgmin = equivalantKgmin;
     }
 
+   
+
+ 
    
 
     public int getPrixGros() {

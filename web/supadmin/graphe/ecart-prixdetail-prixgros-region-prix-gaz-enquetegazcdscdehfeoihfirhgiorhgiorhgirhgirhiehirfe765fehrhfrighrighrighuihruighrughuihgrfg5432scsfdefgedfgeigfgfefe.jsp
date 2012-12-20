@@ -95,24 +95,24 @@ if(mois == 7){out.println("Juillet");} if(mois == 8){out.println("Aout"); }
 if(mois == 9){out.println("Septembre");} if(mois == 10){out.println("Octobre");} 
 if(mois == 11){out.println("Novembre");} if(mois == 12){out.println("Decembre");} %> 
 | <a href="http://localhost:8080/espricomblig/supadmin/administrateurworkspace654333vncvfbvfjvfvfvjfvffjkfrgrggh87654nvfjfvjfvjfhjffvfvjffg1.jsp?admoneth23987hyofficeadmin=176430943">retour</a></p>
-<table width="640" border="0" cellspacing="0" cellpadding="0">
+<table width="700" border="0" cellspacing="0" cellpadding="0">
 <tbody>
   <tr>
-    <td width="76">&nbsp;</td>
-    <th width="35" scope="col">Dk</th>
-    <th width="34" scope="col">Th</th>
-    <th width="39" scope="col">Mt</th>
-    <th width="39" scope="col">Kl</th>
-    <th width="39" scope="col">DL</th>
-    <th width="37" scope="col">SL</th>
+    <td width="72">&nbsp;</td>
+    <th width="41" scope="col">Dk</th>
+    <th width="40" scope="col">Th</th>
+    <th width="43" scope="col">Mt</th>
+    <th width="43" scope="col">Kl</th>
+    <th width="43" scope="col">DL</th>
+    <th width="36" scope="col">SL</th>
     <th width="37" scope="col">FT</th>
-    <th width="39" scope="col">KF</th>
-    <th width="40" scope="col">Kg</th>
+    <th width="38" scope="col">KF</th>
+    <th width="46" scope="col">Kg</th>
     <th width="40" scope="col">Kd</th>
-    <th width="40" scope="col">Lg</th>
-    <th width="44" scope="col">SD</th>
-    <th width="43" scope="col">ZG</th>
-    <th width="58" scope="col">TM</th>
+    <th width="41" scope="col">Lg</th>
+    <th width="53" scope="col">SD</th>
+    <th width="50" scope="col">ZG</th>
+    <th width="77" scope="col">TM</th>
   </tr>
   <%
 //objet gaz
@@ -120,7 +120,7 @@ ProduitGaz prd = service.produitgazServiceDao.findByPrimaryKey(9);
 
 %>
   <tr>
-    <th scope="row">GAZ 2.7 kg</th>
+    <th scope="row">2.7 kg</th>
     <td> <%
             
             EnqueteGaz ed1 = new EnqueteGaz();
@@ -326,7 +326,7 @@ ProduitGaz prd = service.produitgazServiceDao.findByPrimaryKey(9);
 %>
   
   <tr>
-    <th scope="row">GAZ 6kg</th>
+    <th scope="row"> 6kg</th>
     <td><%
             
             EnqueteGaz a = new EnqueteGaz();
@@ -535,7 +535,7 @@ ProduitGaz pr9 = service.produitgazServiceDao.findByPrimaryKey(11);
 %>
   
   
-    <th scope="row">GAZ 9kg</th>
+    <th scope="row"> 9kg</th>
     <td><%
             
             EnqueteGaz as = new EnqueteGaz();
@@ -743,7 +743,7 @@ ProduitGaz pr12 = service.produitgazServiceDao.findByPrimaryKey(12);
 %>
   
   
-    <th scope="row">GAZ 12kg</th>
+    <th scope="row">12kg</th>
     <td><%
             
             EnqueteGaz asa = new EnqueteGaz();
@@ -951,7 +951,7 @@ ProduitGaz pr38 = service.produitgazServiceDao.findByPrimaryKey(13);
 
 %>  
       
-    <th scope="row">GAZ 38 kg</th>
+    <th scope="row">38 kg</th>
     <td><%
             
             EnqueteGaz asa8 = new EnqueteGaz();

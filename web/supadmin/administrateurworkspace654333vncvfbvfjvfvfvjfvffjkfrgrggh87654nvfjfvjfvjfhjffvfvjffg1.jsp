@@ -59,6 +59,7 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 	      <li><a href="produitCLcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Produit CL</a></li>
 	      <li><a href="cuissoncdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Equipement cuisson</a></li>
 	      <li><a href="enqueteurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Enqueteur</a></li>
+          <li><a href="superviseurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Superviseur</a></li>
 	      <li>
 	        <form name="form1" method="post" action="LogOutAdmin">
 	          <input type="submit" name="button3" id="button3" value="Déconnexion">
@@ -78,9 +79,9 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
   <tr bgcolor="#66CC66">
     <td bgcolor="#66CC66">&nbsp;</td>
     <td>&nbsp;</td>
-    <td colspan="4" align="center" class="bleu">&nbsp;</td>
+    <td colspan="4" align="center" bgcolor="#66CC66" class="bleu">&nbsp;</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td bgcolor="#66CC66">&nbsp;</td>
     <td bgcolor="#66CC66">&nbsp;</td>
   </tr>
   <tr>
@@ -97,16 +98,19 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td bgcolor="#66CC66">Ecarte prix Gaz Suivant les Mois</td>
+    <td bgcolor="#66CC66">Variation  prix gaz suivant les mois</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td bgcolor="#66CC66">&nbsp;</td>
   </tr>
   <tr>
     <td width="10" bgcolor="#66CC66">&nbsp;</td>
-    <td width="228"><a href="affacheTousEnquetecdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Enquête Gaz</a></td>
+    <td width="228"><p><a href="affacheTousEnquetecdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Enquête Gaz</a></p>
+    <p><a href="affacheTousEnquete-PL-cdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Enquête Produits Ligneux</a> </p>
+    <p><a href="affacheTousEnquete-Cuisson-cdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Enquête Equipement Cuisson</a> </p>
+    <p><a href="affacheTousEnquete-Inventairegaz-cdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Stock Inventaire Gaz</a></p></td>
     <td width="4" bgcolor="#66CC66">&nbsp;</td>
-    <td width="255"><p><a href="graphe/ecart-prixdetail-prixgros-region-prix-gaz-enquetegazcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp?mois=11&fgggf=54">Mois Nonembre</a></p>
+    <td width="255"><form name="form3" method="post" action="graphe/regionaaaaaaaatroisdddddepartementssssssssssssssssssss.jsp">
       <p>Par Mois
         <select name="mois" id="mois">
           <option value="1">Janvier</option>
@@ -124,7 +128,6 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
         </select>
       </p>
       <p>Région
-
         <select  required="true" name="region" id="region">
           <%
 			 Region rg = new Region();
@@ -138,8 +141,9 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 			
 		              %>
         </select>
-<input type="submit" name="button" id="button" value="Visualiser">
-    </p></td>
+        <input type="submit" name="button" id="button" value="Visualiser">
+      </p>
+    </form></td>
     <td width="4" bgcolor="#66CC66">&nbsp;</td>
     <td width="238"><form name="form2" method="post" action="graphe/ecart-prixdetail-prixgros-region-prix-gaz-enquetegazcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">
       <p>Toutes Région</p>
@@ -160,7 +164,7 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
         </select>
         <input type="submit" name="button2" id="button2" value="Visualiser">
       </p>
-    </form>      <p>&nbsp;</p></td>
+    </form></td>
     <td width="10" bgcolor="#66CC66">&nbsp;</td>
     <td width="409">&nbsp;</td>
     <td width="15" bgcolor="#66CC66">&nbsp;</td>
@@ -178,7 +182,7 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
   </tr>
   <tr>
     <td bgcolor="#66CC66">&nbsp;</td>
-    <td><a href="affacheTousEnquete-PL-cdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Enquête Produits Ligneux</a></td>
+    <td><a href="graphe/evolutionnnnnnnnnnnnnnnnnnnnnnnndessssssssssssssssssstoccccccccccccck.jsp">Evolution des stocks de gaz</a></td>
     <td bgcolor="#66CC66">&nbsp;</td>
     <td>&nbsp;</td>
     <td bgcolor="#66CC66">&nbsp;</td>
@@ -237,7 +241,7 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
   </tr>
   <tr>
     <td bgcolor="#66CC66">&nbsp;</td>
-    <td><a href="affacheTousEnquete-Cuisson-cdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Enquête Equipement Cuisson</a></td>
+    <td><a href="graphe/evolution-stock-gaz-annee-ddjschjcdjhhdhcgehcgehjcghgdc-cdcdhcdhgchgcscgscs-dccvsghcvd.jsp">Evolution stock CL par région</a></td>
     <td bgcolor="#66CC66">&nbsp;</td>
     <td>&nbsp;</td>
     <td bgcolor="#66CC66">&nbsp;</td>
@@ -248,7 +252,7 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
   </tr>
   <tr>
     <td bgcolor="#66CC66">&nbsp;</td>
-    <td><a href="affacheTousEnquete-Inventairegaz-cdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Stock Inventaire Gaz</a></td>
+    <td>&nbsp;</td>
     <td bgcolor="#66CC66">&nbsp;</td>
     <td>&nbsp;</td>
     <td bgcolor="#66CC66">&nbsp;</td>

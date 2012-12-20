@@ -158,8 +158,8 @@ try {
     }
    
      }
-catch(Exception e)  {
-
+catch(Exception e)
+{
     response.sendRedirect("modifenqueteurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp?mod39876ytre54320jhg543=087654gfr4329&dest65432id5432="+eq.getIdenqueteur()+"&dxggd=54fds");
      ServletContext sc = getServletContext();
      //sc.log(e.getMessage());

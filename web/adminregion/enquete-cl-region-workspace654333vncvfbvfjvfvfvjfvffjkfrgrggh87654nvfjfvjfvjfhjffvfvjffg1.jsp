@@ -121,9 +121,9 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
     <td width="3" bgcolor="#FFFFFF">&nbsp;</td>
     <td width="171" bgcolor="#ADADAD"><strong>Type conditionnement</strong></td>
     <td width="3" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="127" bgcolor="#ADADAD"><strong>Equivalant en Kg min</strong></td>
+    <td width="127" bgcolor="#ADADAD"><strong>Poids  min en Kg</strong></td>
     <td width="3" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="125" bgcolor="#ADADAD"><strong>Equivalant en Kg max</strong></td>
+    <td width="125" bgcolor="#ADADAD"><strong>Poids  max en Kg</strong></td>
     <td width="3" bgcolor="#FFFFFF">&nbsp;</td>
     <td width="114" bgcolor="#ADADAD"><div align="center"><strong><span class="feature-title">Prix Gros</span></strong></div></td>
     <td width="3" align="center" bgcolor="#FFFFFF">&nbsp;</td>

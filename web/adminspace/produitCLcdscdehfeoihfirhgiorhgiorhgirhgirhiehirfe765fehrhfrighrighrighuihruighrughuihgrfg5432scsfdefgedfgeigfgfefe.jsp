@@ -85,10 +85,13 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 	      <li class="active"><a href="enquetegazcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Suivi_Gaz</a></li>
 	      <li></li>
 	      <li><a href="produitCLcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Suivi_CL</a></li>
-	      
 	      <li><a href="inventairegazcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Inventaire_Stock_gaz</a></li>
 	      <li><a href="cuissoncdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Suivi_Eq-cuisson</a></li>
-	      <li><a href="enqueteurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Enqueteur</a></li>
+	      <li>
+	        <form name="form1" method="post" action="LogOutEnqueteur">
+	          <input type="submit" name="button3" id="button3" value="Déconnexion">
+            </form>
+          </li>
         </ul>
       </div>
 	</div>
@@ -141,23 +144,31 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
     </tr>
     <tr>
       <td align="right" bgcolor="#D0D0D0">Type de condictionnement<span class="red"> *</span></td>
-      <td bgcolor="#D0D0D0"><input required="true" name="typecondition" type="text" id="typecondition" size="20" placeholder="Ex: sac, pôt" /></td>
+      <td bgcolor="#D0D0D0"><select name="typecondition" id="typecondition">
+        <option value="Pot de tomate de 2kg ">Pot de tomate de 2kg </option>
+        <option value="Sac de riz contenance 50 kg">Sac de riz contenance 50 kg</option>
+        <option value="Bassine en plastique">Bassine en plastique</option>
+        <option value="Sac de 50 kg">Sac de 50 kg</option>
+        <option value="Pesée">Pesée</option>
+        <option value="fagot">fagot</option>
+        <option value="Sachet en kraft de 1 kg recyclé">Sachet en kraft de 1 kg recyclé</option>
+        <option value="&frac12; Pot de tomate de 2kg ">&frac12; Pot de tomate de 2kg </option>
+      </select></td>
       <td bgcolor="#FFFFFF">&nbsp;</td>
       <td align="right" bgcolor="#D0D0D0">Prix en détail *</td>
       <td bgcolor="#D0D0D0"><input required="true" name="pd" type="text" id="pd" size="14" maxlength="9" placeholder="Ex: 1550" />
         CFA</td>
     </tr>
     <tr>
-      <td align="right" bgcolor="#D0D0D0">Equivalence en Kg min <span class="red">*</span></td>
-      <td bgcolor="#D0D0D0"><input required="true" name="equikgmin" type="text" id="equikgmin" size="14" maxlength="9" placeholder="Ex: 47" />
-      kg</td>
+      <td align="right" bgcolor="#D0D0D0">Poids  min en Kg<span class="red">*</span></td>
+      <td bgcolor="#D0D0D0"><input required="true" name="equikgmin" type="text" id="equikgmin" size="14" maxlength="9" placeholder="Ex: 10.4 kg" /></td>
       <td bgcolor="#FFFFFF">&nbsp;</td>
-      <td align="right" bgcolor="#D0D0D0">Marché</td>
-      <td bgcolor="#D0D0D0"><input required="true" name="marche" type="text" id="marche" size="14" placeholder="Ex: marché ou zone enquéte" /></td>
+      <td align="right" bgcolor="#D0D0D0">Marché </td>
+      <td align="left" bgcolor="#D0D0D0"><input required="true" name="marche" type="text" id="marche" size="14" placeholder="Ex: marché ou zone enquéte" /></td>
     </tr>
     <tr>
-      <td align="right" bgcolor="#D0D0D0">Equivalence en Kg max <span class="red">*</span></td>
-      <td bgcolor="#D0D0D0"><input required="true" name="equikgmax" type="text" id="equikgmax" size="14" maxlength="9" placeholder="Ex: 50" /></td>
+      <td align="right" bgcolor="#D0D0D0">Poids  max en Kg<span class="red">*</span></td>
+      <td bgcolor="#D0D0D0"><input required="true" name="equikgmax" type="text" id="equikgmax" size="14" maxlength="9" placeholder="Ex: 12.5 kg" /></td>
       <td bgcolor="#FFFFFF">&nbsp;</td>
       <td align="right" bgcolor="#D0D0D0">&nbsp;</td>
       <td bgcolor="#D0D0D0">&nbsp;</td>
@@ -177,26 +188,26 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
     </tr>
   </table>
 </form>
-<table width="900" border="0" align="center" cellpadding="0" cellspacing="0">
+<table width="920" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr bgcolor="#AAAAFF">
-    <td colspan="15" align="center" bgcolor="#EAEAEA">Liste de vos enquétes</td>
+    <td colspan="15" align="center" bgcolor="#EAEAEA">Données collectées</td>
   </tr>
   <tr bgcolor="#D0D0D0">
-    <td width="92"><div align="center"><strong><span class="feature-title">Nom produit</span></strong></div></td>
+    <td width="137"><div align="center"><strong><span class="feature-title">Nom produit</span></strong></div></td>
     <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="130"><div align="center"><strong><span class="feature-title">Type conditionnement</span></strong></div></td>
+    <td width="119"><div align="center"><strong><span class="feature-title">Conditionnement</span></strong></div></td>
     <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="102"><div align="center"><strong><span class="feature-title">Equivalant en Kg min</span></strong></div></td>
+    <td width="96"><div align="center">Poids  min en Kg</div></td>
     <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="106"><strong><span class="feature-title">Equivalant en Kg max</span></strong></td>
+    <td width="98">Poids  max en Kg</td>
     <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="95"><div align="center"><strong>Prix en Gros</strong></div></td>
+    <td width="112"><div align="center"><strong>Prix en Gros</strong></div></td>
     <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="96"><strong>Prix en détail</strong></td>
+    <td width="98"><strong>Prix en détail</strong></td>
     <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="181"><strong>Marché où l'enquete est faite</strong></td>
+    <td width="158" align="center"><strong>Marché</strong></td>
     <td width="4" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="70"><span class="feature-title"><strong>modifier</strong></span></td>
+    <td width="74"><span class="feature-title"><strong>modifier</strong></span></td>
   </tr>
   <%
             EnqueteCl eq = new EnqueteCl();
@@ -222,7 +233,7 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
     <td align="left" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="left" bgcolor="#F1F1F1"><strong><span class="bleu"><%=dest.getPrixDetail() %></span></strong></td>
     <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
-    <td align="center" bgcolor="#F1F1F1">&nbsp;</td>
+    <td align="center" bgcolor="#F1F1F1"><strong><span class="bleu"><%=dest.getMarchee() %></span></strong></td>
     <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
     <td align="center"><strong><span class="feature-title"><a href="modifenqueteCLcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp?dest65432id5432=<%=dest.getIdenqueteCl() %>">modifier</a></span></strong></td>
   </tr>

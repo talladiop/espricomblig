@@ -78,7 +78,8 @@ public class InsertionEnqueteCL extends FactoryService
                        //remplacement <<ç >>
                        String co3 = co2.replaceAll("à§", "ç");
                         String co4 = co3.replaceAll("Ã´", "ô");
-                        String typecondition = co4.replaceAll("Ãª", "ê");
+                        String co5 = co4.replaceAll("Â½", "½");
+                        String typecondition = co5.replaceAll("Ãª", "ê");
                         
                         //remplacement <<é,è>> dans marche
                        String ee = request.getParameter("marche"); 
@@ -116,8 +117,8 @@ public class InsertionEnqueteCL extends FactoryService
 			ct = new EnqueteCl(0,
                                         prcl,
 					typecondition,
-                                        Integer.parseInt(request.getParameter("equikgmin")),
-                                        Integer.parseInt(request.getParameter("equikgmax")),
+                                        Float.parseFloat(request.getParameter("equikgmin")),
+                                        Float.parseFloat(request.getParameter("equikgmax")),
 					Integer.parseInt(request.getParameter("pg")),
                                         Integer.parseInt(request.getParameter("pd")),
                                         dateenregistrer,

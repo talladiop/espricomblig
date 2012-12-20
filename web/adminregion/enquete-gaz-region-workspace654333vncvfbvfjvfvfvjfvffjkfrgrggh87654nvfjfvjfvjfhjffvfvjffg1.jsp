@@ -114,7 +114,7 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 <p><a href="enquete-gaz-region-workspace654333vncvfbvfjvfvfvjfvffjkfrgrggh87654nvfjfvjfvjfhjffvfvjffg1.jsp?ffdf=65&toutvalide=654re&stgx=65"><img src="images/campinegaz.JPG" width="20" height="20">Cliquer pour valider toutes les enquêtes</a></p>
 <table width="1120" border="0" align="center" cellpadding="0" cellspacing="0" class="tail12">
   <tr bgcolor="#AAAAFF">
-    <td colspan="14" align="center" bgcolor="#CCCCCC"><strong>Liste de toutes les enquêtes de Gaz  de la Région de <%=cptcl.getDepartement().getRegion().getNomregion()  %></strong></td>
+    <td colspan="14" align="center" bgcolor="#CCCCCC"><strong>Liste des prix de bonbonnes de gaz en vigueur- Région de <%=cptcl.getDepartement().getRegion().getNomregion()  %></strong></td>
   </tr>
   <tr bgcolor="#AAAAFF">
     <td width="112" bgcolor="#ADADAD"><div align="center"><strong>Produit</strong></div></td>

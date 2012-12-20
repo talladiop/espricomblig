@@ -44,6 +44,9 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
+
+
+
 </head>
 <body>
 <!-- start header -->
@@ -58,7 +61,13 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 	      <li><a href="produitCLcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Suivi_CL</a></li>
 	      <li><a href="inventairegazcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Inventaire_Stock_gaz</a></li>
 	      <li><a href="cuissoncdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Suivi_Eq-cuisson</a></li>
-	      <li><a href="enqueteurcdscdehfeoihfirhgiorhgiorhgirhgirhiehirfe765fehrhfrighrighrighuihruighrughuihgrfg5432scsfdefgedfgeigfgfefe.jsp">Enqueteur</a></li>
+	     
+          <li>
+            <form name="form1" method="post" action="LogOutEnqueteur">
+              <input type="submit" name="button" id="button" value="Déconnexion">
+            </form>
+          </li>
+          
         </ul>
       </div>
 	</div>
@@ -71,7 +80,11 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p>Espace Equeteur</p>
+<p align="center"><strong>SUIVI  DE PRIX DES COMBUSTIBLES  DOMESTIQUES</strong></p>
+<p align="center"><strong>Questionnaire  à l’attention des producteurs, distributeurs de combustibles</strong><br>
+  <strong> </strong><br>
+  <strong>FICHE  DE SUIVI MENSUEL </strong></p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -91,6 +104,9 @@ Description: A two-column, fixed-width and lightweight template ideal for 1024x7
 	<p id="legal">(c) Copyright 2012 </p>
 </div>
 <!-- end footer -->
+
+
+
 </body>
 </html>
  <% }else{
